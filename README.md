@@ -39,7 +39,7 @@ plt.subplot(1,2,1)<br>
 plt.imshow(mask,cmap="gray")<br>
 plt.subplot(1,2,2)<br>
 plt.imshow(result)<br>
-<br>ithubusercontent.com/97970956/175023157-0320f0f4-eee6-4aa1-bd66-4c1aba56febb.png)<br>
+ithubusercontent.com/97970956/175023157-0320f0f4-eee6-4aa1-bd66-4c1aba56febb.png)<br>
 <br>
 
 
@@ -131,6 +131,8 @@ cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/97970956/175275210-2ff7887e-4c65-4def-8918-4e3f8aabccc9.png)<br>
 ![image](https://user-images.githubusercontent.com/97970956/175275307-444c32ed-c450-4562-ab85-17dbcd7dfc07.png)<br>
 ![image](https://user-images.githubusercontent.com/97970956/175275393-1d1bc373-722a-40e3-a4de-ee59a077519c.png)<br>
+
+5.program to create an image using 2Darray<br>
 
 import cv2 as c<br>
 import numpy as np<br>
