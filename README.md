@@ -147,4 +147,31 @@ c.waitKey(0)<br>
 
 ![image](https://user-images.githubusercontent.com/97970956/175284080-290e0547-715f-4db4-a9a1-62865938ed35.png)<br>
 
+6.Image processing using bitwise operator?<br><br>
+import cv2<br>
+import matplotlib.pyplot as plt<br>
+image1=cv2.imread('nature.jpg')<br>
+image2=cv2.imread('nature.jpg')<br>
+ax=plt.subplots(figsize=(15,10))<br>
+bitwiseAnd=cv2.bitwise_and (image1,image2)<br>
+bitwiseOr=cv2.bitwise_or (image1,image2)<br>
+bitwiseXor=cv2.bitwise_xor (image1,image2)<br>
+bitwiseNot_img1=cv2.bitwise_not (image1,image2)<br>
+bitwiseNot_img2=cv2.bitwise_not (image1,image2)<br>
+plt.subplot(151)<br>
+plt.imshow(bitwiseAnd)<br>
+plt.subplot(152)<br>
+plt.imshow(bitwiseOr)<br>
+plt.subplot(153)<br>
+plt.imshow(bitwiseXor)<br>
+plt.subplot(154)<br>
+plt.imshow(bitwiseNot_img1)<br>
+plt.subplot(155)<br>
+plt.imshow(bitwiseNot_img2)<br>
+cv2.waitKey(0)<br>
+
+Outpu:<br>
+
+![image](https://user-images.githubusercontent.com/97970956/176402963-f4adb2c4-7d5c-435b-9aac-1543138370d5.png)
+
 
