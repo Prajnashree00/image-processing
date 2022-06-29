@@ -6,7 +6,16 @@ cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/97970956/174995803-db53dd6a-14fe-426c-9dcd-6cf0466c102e.png)<br>
 
-
+8.Resize the original image
+rom PIL import Image
+image=Image.open("flower2.jpg")
+print("Filename:",image.filename)
+print("Format:",image.format)
+print("Mode:",image.mode)
+print("Size:",image.size)
+print("Width:",image.width)
+print("Height:",image.height)
+image.close()
 
 **1.cover the image to URL code**<br>
 from skimage import io<br>
