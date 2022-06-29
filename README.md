@@ -53,7 +53,7 @@ output:<br>
 ![image](https://user-images.githubusercontent.com/97970956/175013222-2b97c85a-cc09-4285-9763-08249fb4c856.png)<br>
 
 
-
+2.Write a program to mask and blur the image <br>
 import cv2<br>
 import matplotlib.image as mping<br>
 import matplotlib.pyplot as plt<br>
@@ -72,6 +72,7 @@ plt.subplot(1,2,1)<br>
 plt.imshow(mask,cmap="gray")<br>
 plt.subplot(1,2,2)<br>
 plt.imshow(result)<br>
+![image](https://user-images.githubusercontent.com/97970956/176486243-2c7c3eca-2792-4257-aa19-e20b7084214d.png)
 
 
 
