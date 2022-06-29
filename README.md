@@ -239,33 +239,33 @@ Output:<br>
 ![image](https://user-images.githubusercontent.com/97970956/176422371-ff1b3598-634c-48c2-8317-8468571c21cb.png)
 ![image](https://user-images.githubusercontent.com/97970956/176422432-f577810e-5225-4947-a8cf-1287deda10f3.png)
 
+9.morphological
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot  as plt<br>
+from PIL import Image,ImageEnhance<br>
+img=cv2.imread('nature.jpg',0)<br>
+ax=plt.subplots(figsize=(20,10))<br>
+kernel=np.ones((5,5),np.uint8)<br>
+opening=cv2.morphologyEx(img,cv2.MORPH_OPEN,kernel)<br>
+closing=cv2.morphologyEx(img,cv2.MORPH_CLOSE,kernel)<br>
+erosion=cv2.erode(img,kernel,iterations=1)<br>
+dilation=cv2.dilate(img,kernel,iterations=1)<br>
+gradient=cv2.morphologyEx(img,cv2.MORPH_GRADIENT,kernel)<br>
+plt.subplot(151)<br>
+plt.imshow(opening)<br>
+plt.subplot(152)<br>
+plt.imshow(closing)<br>
+plt.subplot(153)<br>
+plt.imshow(erosion)<br>
+plt.subplot(154)<br>
+plt.imshow(dilation)<br>
+plt.subplot(155)<br>
+plt.imshow(gradient)<br>
+cv2.waitKey(0)<br>
 
-import cv2
-import numpy as np
-from matplotlib import pyplot  as plt
-from PIL import Image,ImageEnhance
-img=cv2.imread('nature.jpg',0)
-ax=plt.subplots(figsize=(20,10))
-kernel=np.ones((5,5),np.uint8)
-opening=cv2.morphologyEx(img,cv2.MORPH_OPEN,kernel)
-closing=cv2.morphologyEx(img,cv2.MORPH_CLOSE,kernel)
-erosion=cv2.erode(img,kernel,iterations=1)
-dilation=cv2.dilate(img,kernel,iterations=1)
-gradient=cv2.morphologyEx(img,cv2.MORPH_GRADIENT,kernel)
-plt.subplot(151)
-plt.imshow(opening)
-plt.subplot(152)
-plt.imshow(closing)
-plt.subplot(153)
-plt.imshow(erosion)
-plt.subplot(154)
-plt.imshow(dilation)
-plt.subplot(155)
-plt.imshow(gradient)
-cv2.waitKey(0)
 
-
-![image](https://user-images.githubusercontent.com/97970956/176427745-8c34e52f-0184-443e-935c-3705bd87f9e1.png)
+![image](https://user-images.githubusercontent.com/97970956/176427745-8c34e52f-0184-443e-935c-3705bd87f9e1.png)<br>
 
 
 
