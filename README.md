@@ -34,6 +34,8 @@ Y)
 cv2.imshow("Binary",bw_img)
 cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
+![image](https://user-images.githubusercontent.com/97970956/176482938-0a07162e-6211-4901-843e-cee5665dac3a.png)
+
 
 
 **1.cover the image to URL code**<br>
