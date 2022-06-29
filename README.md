@@ -6,19 +6,34 @@ cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/97970956/174995803-db53dd6a-14fe-426c-9dcd-6cf0466c102e.png)<br>
 
-8.Resize the original image
-rom PIL import Image
-image=Image.open("flower2.jpg")
-print("Filename:",image.filename)
-print("Format:",image.format)
-print("Mode:",image.mode)
-print("Size:",image.size)
-print("Width:",image.width)
-print("Height:",image.height)
-image.close()
-![image](https://user-images.githubusercontent.com/97970956/176482164-70e3fcb4-82a3-49f9-867b-2e6c599b3a1a.png)
+8.Resize the original image<br>
+rom PIL import Image<br>
+image=Image.open("flower2.jpg")<br>
+print("Filename:",image.filename)<br>
+print("Format:",image.format)<br>
+print("Mode:",image.mode)<br>
+print("Size:",image.size)<br>
+print("Width:",image.width)<br>
+print("Height:",image.height)<br>
+image.close()<br>
+![image](https://user-images.githubusercontent.com/97970956/176482164-70e3fcb4-82a3-49f9-867b-2e6c599b3a1a.png)<br>
 
-9.convert the original to grey scale and then to binary ?
+9.convert the original to grey scale and then to binary ?<br>
+import cv2<br>
+
+img=cv2.imread('flower3.jpg')<br>
+cv2.imshow("RGB",img)<br>
+cv2.waitKey(0)<br>
+#gray scale<br>
+img=cv2.imread ('flower3.jpg',0)<br>
+cv2.imshow("Gray",img)<br>
+cv2.waitKey(0)<br>
+#binary image<br>
+ret,bw_img=cv2.threshold (img,127,255,cv2.THRESH_BINAR<br>
+Y)
+cv2.imshow("Binary",bw_img)
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
 
 
 **1.cover the image to URL code**<br>
