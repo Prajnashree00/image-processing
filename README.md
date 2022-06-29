@@ -175,3 +175,27 @@ Outpu:<br>
 ![image](https://user-images.githubusercontent.com/97970956/176402963-f4adb2c4-7d5c-435b-9aac-1543138370d5.png)
 
 
+7.blur image<br>
+import cv2<br>
+import numpy as np<br>
+
+image=cv2.imread('puppy2.jpg')<br>
+
+cv2.imshow('original Image',image)<br>
+cv2.waitKey(0)<br>
+
+#gaussian blur<br>
+Gaussian=cv2.GaussianBlur(image,(7,7),0)<br>
+cv2.imshow('Gaussian Blurring',Gaussian)<br>
+cv2.waitKey(0)<br>
+
+#median Blur<br>
+median=cv2.medianBlur(image,5)<br>
+cv2.imshow('Median Blurring',median)<br>
+cv2.waitKey(0)<br>
+
+#Bilateral Blur<br>
+bilateral=cv2.bilateralFilter(image,9,75,75)<br>
+cv2.imshow('Bilateral Blurring',bilateral)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
