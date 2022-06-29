@@ -16,6 +16,10 @@ print("Size:",image.size)
 print("Width:",image.width)
 print("Height:",image.height)
 image.close()
+![image](https://user-images.githubusercontent.com/97970956/176482164-70e3fcb4-82a3-49f9-867b-2e6c599b3a1a.png)
+
+9.convert the original to grey scale and then to binary ?
+
 
 **1.cover the image to URL code**<br>
 from skimage import io<br>
