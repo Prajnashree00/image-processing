@@ -8,7 +8,7 @@ cv2.destroyAllWindows()<br>
 
 
 
-1.cover the image to URL code<br>
+**1.cover the image to URL code**<br>
 from skimage import io<br>
 import matplotlib.pyplot as plt<br>
 url='https://i.natgeofe.com/n/3861de2a-04e6-45fd-aec8-02e7809f9d4e/02-cat-training-NationalGeographic_1484324_3x2.jpg'<br>
@@ -70,7 +70,7 @@ plt.imshow(blur)<br>
 plt.show()<br>
 ![image](https://user-images.githubusercontent.com/97970956/175023457-d139c3cf-e08e-428f-9951-74a154921e79.png)<br>
 
-3.write a program to perform arithmatic operation on images?<br>
+**3.write a program to perform arithmatic operation on images?**<br>
 import cv2<br>
 import matplotlib.image as mping<br>
 import matplotlib.pyplot as plt<br>
@@ -110,7 +110,7 @@ cv2.imwrite('output.jpg',fimg4)<br>
 ![image](https://user-images.githubusercontent.com/97970956/175269989-6c895a23-ab66-4106-990d-680225907fc5.png)<br>
 ![image](https://user-images.githubusercontent.com/97970956/175270039-07787229-6968-4350-836d-bd8a47a07761.png)<br>
 
-4.write a program to image to different color space<br>
+**4.write a program to image to different color space**<br>
 import cv2<br>
 img=cv2.imread("D:\\red.jpg")<br>
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)<br>
@@ -132,7 +132,7 @@ cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/97970956/175275307-444c32ed-c450-4562-ab85-17dbcd7dfc07.png)<br>
 ![image](https://user-images.githubusercontent.com/97970956/175275393-1d1bc373-722a-40e3-a4de-ee59a077519c.png)<br>
 
-5.program to create an image using 2Darray<br>
+**5.program to create an image using 2Darray**<br>
 
 import cv2 as c<br>
 import numpy as np<br>
@@ -147,7 +147,7 @@ c.waitKey(0)<br>
 
 ![image](https://user-images.githubusercontent.com/97970956/175284080-290e0547-715f-4db4-a9a1-62865938ed35.png)<br>
 
-6.Image processing using bitwise operator?<br><br>
+**6.Image processing using bitwise operator?**<br><br>
 import cv2<br>
 import matplotlib.pyplot as plt<br>
 image1=cv2.imread('nature.jpg')<br>
@@ -175,7 +175,7 @@ Outpu:<br>
 ![image](https://user-images.githubusercontent.com/97970956/176402963-f4adb2c4-7d5c-435b-9aac-1543138370d5.png)
 
 
-7.blur image<br>
+**7.blur image**<br>
 import cv2<br>
 import numpy as np<br>
 
@@ -200,11 +200,12 @@ cv2.imshow('Bilateral Blurring',bilateral)<br>
 cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
 
-ouput:
+ouput:<br>
 ![image](https://user-images.githubusercontent.com/97970956/176412977-4a5124d5-7417-40ec-b3da-e34a390204ae.png)
 ![image](https://user-images.githubusercontent.com/97970956/176413071-92949d59-4da3-4ec8-b2ab-3ea08b34761b.png)
 ![image](https://user-images.githubusercontent.com/97970956/176413147-57ad7de0-8034-4950-944f-bc2a7d3276db.png)
 ![image](https://user-images.githubusercontent.com/97970956/176413236-bcfff73d-abb0-4c2a-af1f-458ef07d302f.png)
+
 
 
 
