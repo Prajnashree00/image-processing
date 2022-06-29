@@ -206,7 +206,33 @@ ouput:<br>
 ![image](https://user-images.githubusercontent.com/97970956/176413147-57ad7de0-8034-4950-944f-bc2a7d3276db.png)
 ![image](https://user-images.githubusercontent.com/97970956/176413236-bcfff73d-abb0-4c2a-af1f-458ef07d302f.png)
 
+8.Image enhancement
+from PIL import Image
+from PIL import ImageEnhance
+image=Image.open('nature.jpg')
+image.show()
 
+enh_bri=ImageEnhance.Brightness(image)
+brightness=1.5
+image_brightned=enh_bri.enhance(brightness)
+image_brightned.show()
+
+enh_col=ImageEnhance.Color(image)
+color=1.5
+image_colored=enh_col.enhance(color)
+image_colored.show()
+
+enh_con=ImageEnhance.Contrast(image)
+contrast=1.5
+image_contrasted=enh_col.enhance(contrast)
+image_contrasted.show()
+
+enh_sha=ImageEnhance.Sharpness(image)
+sharpness=3.0
+image_sharped=enh_sha.enhance(sharpness)
+image_sharped.show()
+
+Output:<br>
 
 
 
