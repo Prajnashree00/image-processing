@@ -36,6 +36,7 @@ cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/97970956/176482938-0a07162e-6211-4901-843e-cee5665dac3a.png)
 ![image](https://user-images.githubusercontent.com/97970956/176483282-ae408cc6-4aba-4071-ab97-3ef3d37b15d3.png)
+![image](https://user-images.githubusercontent.com/97970956/176485862-99fc51b5-5b4d-4b82-828b-aa9cf4a43462.png)
 
 
 
@@ -71,8 +72,7 @@ plt.subplot(1,2,1)<br>
 plt.imshow(mask,cmap="gray")<br>
 plt.subplot(1,2,2)<br>
 plt.imshow(result)<br>
-ithubusercontent.com/97970956/175023157-0320f0f4-eee6-4aa1-bd66-4c1aba56febb.png)<br>
-<br>
+
 
 
 light_white=(0,0,200)<br>
