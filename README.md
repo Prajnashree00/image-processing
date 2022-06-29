@@ -199,3 +199,13 @@ bilateral=cv2.bilateralFilter(image,9,75,75)<br>
 cv2.imshow('Bilateral Blurring',bilateral)<br>
 cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
+
+ouput:
+![image](https://user-images.githubusercontent.com/97970956/176412977-4a5124d5-7417-40ec-b3da-e34a390204ae.png)
+![image](https://user-images.githubusercontent.com/97970956/176413071-92949d59-4da3-4ec8-b2ab-3ea08b34761b.png)
+![image](https://user-images.githubusercontent.com/97970956/176413147-57ad7de0-8034-4950-944f-bc2a7d3276db.png)
+![image](https://user-images.githubusercontent.com/97970956/176413236-bcfff73d-abb0-4c2a-af1f-458ef07d302f.png)
+
+
+
+
