@@ -8,10 +8,12 @@ cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/97970956/174995803-db53dd6a-14fe-426c-9dcd-6cf0466c102e.png)<br>
 
 2. Develop a program to display the image using matplotlib<br>
-import matplotlib.image as mpimg
-import matplotlib.pyplot as plt
-img=mpimg.imread("d1.jpg")
-plt.imshow(img) 
+import matplotlib.image as mpimg<br>
+import matplotlib.pyplot as plt<br>
+img=mpimg.imread("d1.jpg")<br>
+plt.imshow(img) <br>
+![image](https://user-images.githubusercontent.com/97970956/178448790-f2df7bb2-1c5e-43b7-afd0-e68889d85afe.png)
+
 
 8.Resize the original image<br>
 rom PIL import Image<br>
