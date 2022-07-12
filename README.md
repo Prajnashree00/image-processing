@@ -54,6 +54,8 @@ plt.show()
 img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
 plt.imshow(img)
 plt.show()
+![image](https://user-images.githubusercontent.com/97970956/178453729-c1411bb9-88b7-458c-8836-b3c6b1679e1e.png)
+
 
 
 
