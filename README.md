@@ -7,6 +7,12 @@ cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/97970956/174995803-db53dd6a-14fe-426c-9dcd-6cf0466c102e.png)<br>
 
+2. Develop a program to display the image using matplotlib<br>
+import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
+img=mpimg.imread("d1.jpg")
+plt.imshow(img) 
+
 8.Resize the original image<br>
 rom PIL import Image<br>
 image=Image.open("flower2.jpg")<br>
