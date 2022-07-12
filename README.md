@@ -20,6 +20,7 @@ img=img.rotate(180)
 img.show()
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+![image](https://user-images.githubusercontent.com/97970956/178449546-bdab8987-7134-4a12-85a6-32ca286d082c.png)
 
 
 
