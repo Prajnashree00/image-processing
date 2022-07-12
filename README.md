@@ -40,7 +40,21 @@ from PIL import Image)
 img=Image.new("RGB",(200,400),(255,255,0)))
 img.show())
 ![image](https://user-images.githubusercontent.com/97970956/178453176-86d8a116-f0fd-44c1-b4ff-ebfe1bc9335a.png)
-6.
+
+6.develop a program to utilize the image using various color spaces
+import cv2
+import matplotlib.pyplot as plt
+import numpy as np
+img=cv2.imread('d1.jpg')
+plt.imshow(img)
+plt.show()
+img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+plt.imshow(img)
+plt.show()
+img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
+plt.imshow(img)
+plt.show()
+
 
 
 8.Resize the original image<br>
