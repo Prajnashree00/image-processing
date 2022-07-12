@@ -72,8 +72,6 @@ size: (259, 194)<br>
 width: 259<br>
 height: 194<br>
 
-**Lab excercises:**
-
 8.Resize the original image<br>
 rom PIL import Image<br>
 image=Image.open("flower2.jpg")<br>
@@ -107,8 +105,7 @@ cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/97970956/176485862-99fc51b5-5b4d-4b82-828b-aa9cf4a43462.png)
 
 
-
-
+**Lab excercise**
 **1.cover the image to URL code**<br>
 from skimage import io<br>
 import matplotlib.pyplot as plt<br>
@@ -121,7 +118,7 @@ output:<br>
 ![image](https://user-images.githubusercontent.com/97970956/175013222-2b97c85a-cc09-4285-9763-08249fb4c856.png)<br>
 
 
-2.Write a program to mask and blur the image <br>
+**2.Write a program to mask and blur the image **<br>
 import cv2<br>
 import matplotlib.image as mping<br>
 import matplotlib.pyplot as plt<br>
@@ -307,7 +304,7 @@ ouput:<br>
 ![image](https://user-images.githubusercontent.com/97970956/176413147-57ad7de0-8034-4950-944f-bc2a7d3276db.png)
 ![image](https://user-images.githubusercontent.com/97970956/176413236-bcfff73d-abb0-4c2a-af1f-458ef07d302f.png)
 
-8.Image enhancement
+**8.Image enhancement**
 from PIL import Image
 from PIL import ImageEnhance
 image=Image.open('nature.jpg')
@@ -340,7 +337,7 @@ Output:<br>
 ![image](https://user-images.githubusercontent.com/97970956/176422371-ff1b3598-634c-48c2-8317-8468571c21cb.png)
 ![image](https://user-images.githubusercontent.com/97970956/176422432-f577810e-5225-4947-a8cf-1287deda10f3.png)
 
-9.morphological
+**9.morphological**
 import cv2<br>
 import numpy as np<br>
 from matplotlib import pyplot  as plt<br>
@@ -364,7 +361,6 @@ plt.imshow(dilation)<br>
 plt.subplot(155)<br>
 plt.imshow(gradient)<br>
 cv2.waitKey(0)<br>
-
 
 ![image](https://user-images.githubusercontent.com/97970956/176427745-8c34e52f-0184-443e-935c-3705bd87f9e1.png)<br>
 
