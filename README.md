@@ -35,7 +35,10 @@ OUTPUT:
 (255, 255, 0)
 (255, 0, 0)
 (255, 192, 203)
-
+5.Write a program to create image using color
+from PIL import Image)
+img=Image.new("RGB",(200,400),(255,255,0)))
+img.show())
 
 
 8.Resize the original image<br>
