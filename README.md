@@ -14,6 +14,14 @@ img=mpimg.imread("d1.jpg")<br>
 plt.imshow(img) <br>
 ![image](https://user-images.githubusercontent.com/97970956/178448790-f2df7bb2-1c5e-43b7-afd0-e68889d85afe.png)
 
+3.develop a program to perform linear transformation rotation from PIL import Image
+img=Image.open("plant1.jpg")
+img=img.rotate(180)
+img.show()
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
 
 8.Resize the original image<br>
 rom PIL import Image<br>
