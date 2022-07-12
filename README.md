@@ -22,7 +22,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ![image](https://user-images.githubusercontent.com/97970956/178449546-bdab8987-7134-4a12-85a6-32ca286d082c.png)
 
-DEVELOP PROGRAM TO CONVERT colorstring to RGB COLOR VALUES
+4.DEVELOP PROGRAM TO CONVERT colorstring to RGB COLOR VALUES
 import cv2
 from PIL import ImageColor
 img1=ImageColor.getrgb("yellow")
@@ -31,6 +31,11 @@ img1=ImageColor.getrgb("red")
 print(img1)
 img1=ImageColor.getrgb("pink")
 print(img1)
+OUTPUT:
+(255, 255, 0)
+(255, 0, 0)
+(255, 192, 203)
+
 
 
 8.Resize the original image<br>
