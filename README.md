@@ -12,52 +12,67 @@ import matplotlib.image as mpimg<br>
 import matplotlib.pyplot as plt<br>
 img=mpimg.imread("d1.jpg")<br>
 plt.imshow(img) <br>
-![image](https://user-images.githubusercontent.com/97970956/178448790-f2df7bb2-1c5e-43b7-afd0-e68889d85afe.png)
+![image](https://user-images.githubusercontent.com/97970956/178448790-f2df7bb2-1c5e-43b7-afd0-e68889d85afe.png)<br>
 
-3.develop a program to perform linear transformation rotation from PIL import Image
-img=Image.open("plant1.jpg")
-img=img.rotate(180)
-img.show()
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-![image](https://user-images.githubusercontent.com/97970956/178449546-bdab8987-7134-4a12-85a6-32ca286d082c.png)
+3.develop a program to perform linear transformation rotation from PIL import Image<br>
+img=Image.open("plant1.jpg")<br>
+img=img.rotate(180)<br>
+img.show()<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+![image](https://user-images.githubusercontent.com/97970956/178449546-bdab8987-7134-4a12-85a6-32ca286d082c.png)<br>
 
-4.DEVELOP PROGRAM TO CONVERT colorstring to RGB COLOR VALUES
-import cv2
-from PIL import ImageColor
-img1=ImageColor.getrgb("yellow")
-print(img1)
-img1=ImageColor.getrgb("red")
-print(img1)
-img1=ImageColor.getrgb("pink")
-print(img1)
-OUTPUT:
-(255, 255, 0)
-(255, 0, 0)
-(255, 192, 203)
-5.Write a program to create image using color
-from PIL import Image)
-img=Image.new("RGB",(200,400),(255,255,0)))
-img.show())
-![image](https://user-images.githubusercontent.com/97970956/178453176-86d8a116-f0fd-44c1-b4ff-ebfe1bc9335a.png)
+4.DEVELOP PROGRAM TO CONVERT colorstring to RGB COLOR VALUES<br>
+import cv2<br>
+from PIL import ImageColor<br>
+img1=ImageColor.getrgb("yellow")<br>
+print(img1)<br>
+img1=ImageColor.getrgb("red")<br>
+print(img1)<br>
+img1=ImageColor.getrgb("pink")<br>
+print(img1)<br>
+OUTPUT:<br>
+(255, 255, 0)<br>
+(255, 0, 0)<br>
+(255, 192, 203)<br>
+5.Write a program to create image using color<br>
+from PIL import Image)<br>
+img=Image.new("RGB",(200,400),(255,255,0)))<br>
+img.show())<br>
+![image](https://user-images.githubusercontent.com/97970956/178453176-86d8a116-f0fd-44c1-b4ff-ebfe1bc9335a.png)<br>
 
-6.develop a program to utilize the image using various color spaces
-import cv2
-import matplotlib.pyplot as plt
-import numpy as np
-img=cv2.imread('d1.jpg')
-plt.imshow(img)
-plt.show()
-img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
-plt.imshow(img)
-plt.show()
-img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
-plt.imshow(img)
-plt.show()
-![image](https://user-images.githubusercontent.com/97970956/178453729-c1411bb9-88b7-458c-8836-b3c6b1679e1e.png)
+6.develop a program to utilize the image using various color spaces<br>
+import cv2<br>
+import matplotlib.pyplot as plt<br>
+import numpy as np<br>
+img=cv2.imread('d1.jpg')<br>
+plt.imshow(img)<br>
+plt.show()<br>
+img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)<br>
+plt.imshow(img)<br>
+plt.show()<br>
+img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)<br>
+plt.imshow(img)<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97970956/178453729-c1411bb9-88b7-458c-8836-b3c6b1679e1e.png)<br>
 
+7.write a program to display image attributes<br>
+from PIL  import Image<br>
+image=Image.open('d1.jpg')<br>
+print("filename:",image.filename)<br>
+print("mode:",image.mode)<br>
+print("size:",image.size)<br>
+print("width:",image.width)<br>
+print("height:",image.height)<br>
+image.close()<br>
+output:<br>
+filename: d1.jpg<br>
+mode: RGB<br>
+size: (259, 194)<br>
+width: 259<br>
+height: 194<br>
 
-
+**Lab excercises:**
 
 8.Resize the original image<br>
 rom PIL import Image<br>
