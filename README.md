@@ -39,6 +39,8 @@ OUTPUT:
 from PIL import Image)
 img=Image.new("RGB",(200,400),(255,255,0)))
 img.show())
+![image](https://user-images.githubusercontent.com/97970956/178453176-86d8a116-f0fd-44c1-b4ff-ebfe1bc9335a.png)
+6.
 
 
 8.Resize the original image<br>
