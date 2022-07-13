@@ -364,10 +364,10 @@ cv2.waitKey(0)<br>
 
 ![image](https://user-images.githubusercontent.com/97970956/176427745-8c34e52f-0184-443e-935c-3705bd87f9e1.png)<br>
 
-10.Develop a program to<br><br>
+**10.Develop a program to<br><br>
 i)Read the image convert it nto grayscale image <br>
 ii)Write (save) the grayscale image and<br>
-iii)display the original image and gray scale image<br>
+iii)display the original image and gray scale image<br>**
 import cv2<br>
 OriginalImg=cv2.imread('rabbit.jpg')<br>
 GrayImg=cv2.imread('rabbit.jpg',0)<br>
@@ -382,4 +382,41 @@ if saved:<br>
  ![image](https://user-images.githubusercontent.com/97970956/178699383-558a5127-1e18-4176-970d-4f6d84f71fd4.png)<br>
  ![image](https://user-images.githubusercontent.com/97970956/178699440-b9894839-8548-49b2-8434-23b6ab1440ea.png)<br>
 
+**11.graylevel slicing with background**<br>
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+image=cv2.imread('cat.jpg',0)<br>
+x,y=image.shape<br>
+z=np.zeros((x,y))<br>
+for i in range(0,x):<br>
+    for j in range(0,y):<br>
+        if(image[i][j]>50 and image[i][j]<150):<br>
+            z[i][j]=255<br>
+        else:<br>
+            z[i][j]=image[i][j]<br>
+equ=np.hstack((image,z))<br>
+plt.title('graylevel slicing with background')<br>
+plt.imshow(equ,'gray')<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97970956/178705576-221a33b6-63f0-4125-893c-e1bb95494684.png)<br>
+
+12.graylevel slicing without background'<br>
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+image=cv2.imread('cat.jpg',0)<br>
+x,y=image.shape<br>
+z=np.zeros((x,y))<br>
+for i in range(0,x):<br>
+    for j in range(0,y):<br>
+        if(image[i][j]>50 and image[i][j]<150):<br>
+            z[i][j]=255<br>
+        else:<br>
+            z[i][j]=0<br>
+equ=np.hstack((image,z))<br>
+plt.title('graylevel slicing without background')<br>
+plt.imshow(equ,'gray')<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97970956/178706033-59f43eb8-69fe-413a-ba03-3ed93deed8ab.png)<br>
 
