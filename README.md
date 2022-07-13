@@ -376,7 +376,7 @@ cv2.imshow('Display original Image',OriginalImg)<br>
 cv2.imshow('Display Grayscale image',GrayImg)<br>
 cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
-if saved:<br>
+if isSaved:<br>
     print('the image is sucessfully saved')<br>
  output:<br>
  ![image](https://user-images.githubusercontent.com/97970956/178699383-558a5127-1e18-4176-970d-4f6d84f71fd4.png)<br>
