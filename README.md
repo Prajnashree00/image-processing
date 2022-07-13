@@ -401,7 +401,7 @@ plt.imshow(equ,'gray')<br>
 plt.show()<br>
 ![image](https://user-images.githubusercontent.com/97970956/178705576-221a33b6-63f0-4125-893c-e1bb95494684.png)<br>
 
-12.graylevel slicing without background'<br>
+**12.graylevel slicing without background**<br>
 import cv2<br>
 import numpy as np<br>
 from matplotlib import pyplot as plt<br>
