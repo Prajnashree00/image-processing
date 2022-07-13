@@ -364,5 +364,22 @@ cv2.waitKey(0)<br>
 
 ![image](https://user-images.githubusercontent.com/97970956/176427745-8c34e52f-0184-443e-935c-3705bd87f9e1.png)<br>
 
+10.Develop a program to
+i)Read the image convert it nto grayscale image 
+ii)Write (save) the grayscale image and
+iii)display the original image and gray scale image
+import cv2
+OriginalImg=cv2.imread('rabbit.jpg')
+GrayImg=cv2.imread('rabbit.jpg',0)
+isSaved=cv2.imwrite('D:/i.jpg',GrayImg)
+cv2.imshow('Display original Image',OriginalImg)
+cv2.imshow('Display Grayscale image',GrayImg)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+if saved:
+    print('the image is sucessfully saved')
+ output:
+ ![image](https://user-images.githubusercontent.com/97970956/178699383-558a5127-1e18-4176-970d-4f6d84f71fd4.png)
+ ![image](https://user-images.githubusercontent.com/97970956/178699440-b9894839-8548-49b2-8434-23b6ab1440ea.png)
 
 
