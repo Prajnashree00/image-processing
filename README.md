@@ -418,5 +418,5 @@ equ=np.hstack((image,z))<br>
 plt.title('graylevel slicing without background')<br>
 plt.imshow(equ,'gray')<br>
 plt.show()<br>
-![image](https://user-images.githubusercontent.com/97970956/178706033-59f43eb8-69fe-413a-ba03-3ed93deed8ab.png)<br>
+![image](https://user-images.githubusercontent.com/97970956/178706784-ed99b011-f1be-4039-b9f0-cdfdf261283a.png)<br>
 
