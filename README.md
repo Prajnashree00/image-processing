@@ -75,7 +75,16 @@ width: 259<br>
 height: 194<br>
 
 8.Resize the original image<br>
-
+import cv2
+img=cv2.imread('flower1.jpg')
+print('original image length width',img.shape)
+cv2.imshow('original image',img)
+cv2.waitKey(0)
+#to show the resized image
+imgresize=cv2.resize(img,(150,160))
+cv2.imshow('Resized image',imgresize)
+print('resized image lenght width',imgresize.shape)
+cv2.waitKey(0)
 
 9.convert the original to grey scale and then to binary ?<br>
 import cv2<br>
