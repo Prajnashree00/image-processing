@@ -85,6 +85,8 @@ imgresize=cv2.resize(img,(150,160))
 cv2.imshow('Resized image',imgresize)
 print('resized image lenght width',imgresize.shape)
 cv2.waitKey(0)
+![image](https://user-images.githubusercontent.com/97970956/178961065-cd576dac-e89a-43b3-aaf6-2218033eac35.png)
+
 
 9.convert the original to grey scale and then to binary ?<br>
 import cv2<br>
