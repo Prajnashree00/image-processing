@@ -426,3 +426,4 @@ plt.imshow(equ,'gray')<br>
 plt.show()<br>
 ![image](https://user-images.githubusercontent.com/97970956/178706784-ed99b011-f1be-4039-b9f0-cdfdf261283a.png)<br>
 
+13.
