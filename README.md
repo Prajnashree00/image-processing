@@ -426,4 +426,37 @@ plt.imshow(equ,'gray')<br>
 plt.show()<br>
 ![image](https://user-images.githubusercontent.com/97970956/178706784-ed99b011-f1be-4039-b9f0-cdfdf261283a.png)<br>
 
-13.
+13.skimage
+from skimage import io
+import matplotlib.pyplot as plt
+image = io.imread('rabbit.jpg')
+
+_ = plt.hist(image.ravel(), bins = 256, color = 'orange', )
+_ = plt.hist(image[:, :, 0].ravel(), bins = 256, color = 'red', alpha = 0.5)
+_ = plt.hist(image[:, :, 1].ravel(), bins = 256, color = 'Green', alpha = 0.5)
+_ = plt.hist(image[:, :, 2].ravel(), bins = 256, color = 'Blue', alpha = 0.5)
+_ = plt.xlabel('Intensity Value')
+_ = plt.ylabel('Count')
+_ = plt.legend(['Total', 'Red_Channel', 'Green_Channel', 'Blue_Channel'])
+plt.show()
+![image](https://user-images.githubusercontent.com/97970956/178966197-cd4627bc-8856-4199-b391-92fc2e40bb4c.png)
+
+#numpy
+import cv2
+import numpy as np
+img  = cv2.imread('rabbit.jpg',0)
+hist = cv2.calcHist([img],[0],None,[256],[0,256])
+plt.hist(img.ravel(),256,[0,256])
+plt.show()
+![image](https://user-images.githubusercontent.com/97970956/178966309-98a1e3c1-13c3-467d-9adc-d1dc90168f5e.png)
+
+#opencv
+import cv2  
+from matplotlib import pyplot as plt  
+img = cv2.imread('rabbit.jpg',0) 
+histr = cv2.calcHist([img],[0],None,[256],[0,256]) 
+plt.plot(histr) 
+plt.show()
+![image](https://user-images.githubusercontent.com/97970956/178966396-859b2414-74a9-4139-a49c-f0afd4605926.png)
+
+
