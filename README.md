@@ -441,6 +441,17 @@ _ = plt.legend(['Total', 'Red_Channel', 'Green_Channel', 'Blue_Channel'])<br>
 plt.show()<br>
 ![image](https://user-images.githubusercontent.com/97970956/178966197-cd4627bc-8856-4199-b391-92fc2e40bb4c.png)<br>
 
+or 
+from skimage import io
+import matplotlib.pyplot as plt
+img = io.imread('rabbit.jpg')
+plt.imshow(img)
+plt.show()
+image = io.imread('rabbit.jpg')
+ax = plt.hist(image.ravel(), bins = 256)
+plt.show()
+![image](https://user-images.githubusercontent.com/97970956/178967175-45a95ca9-db6e-4536-b156-c4c4b4561b30.png)
+
 #numpy<br>
 import cv2<br>
 import numpy as np<br>
