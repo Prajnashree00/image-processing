@@ -75,19 +75,19 @@ width: 259<br>
 height: 194<br>
 
 8.Resize the original image<br>
-import cv2
-img=cv2.imread('flower1.jpg')
-print('original image length width',img.shape)
-cv2.imshow('original image',img)
-cv2.waitKey(0)
-#to show the resized image
-imgresize=cv2.resize(img,(150,160))
-cv2.imshow('Resized image',imgresize)
-print('resized image lenght width',imgresize.shape)
-cv2.waitKey(0)
-![image](https://user-images.githubusercontent.com/97970956/178961065-cd576dac-e89a-43b3-aaf6-2218033eac35.png)
-![image](https://user-images.githubusercontent.com/97970956/178961238-f94602f1-5b69-497b-80b7-05d2e8357d97.png)
-![image](https://user-images.githubusercontent.com/97970956/178962689-f36d053a-dabb-4cca-877c-93967f5fa5ba.png)
+import cv2<br>
+img=cv2.imread('flower1.jpg')<br>
+print('original image length width',img.shape)<br>
+cv2.imshow('original image',img)<br>
+cv2.waitKey(0)<br>
+#to show the resized image<br>
+imgresize=cv2.resize(img,(150,160))<br>
+cv2.imshow('Resized image',imgresize)<br>
+print('resized image lenght width',imgresize.shape)<br>
+cv2.waitKey(0)<br>
+![image](https://user-images.githubusercontent.com/97970956/178961065-cd576dac-e89a-43b3-aaf6-2218033eac35.png)<br>
+![image](https://user-images.githubusercontent.com/97970956/178961238-f94602f1-5b69-497b-80b7-05d2e8357d97.png)<br>
+![image](https://user-images.githubusercontent.com/97970956/178962689-f36d053a-dabb-4cca-877c-93967f5fa5ba.png)<br>
 
 
 9.convert the original to grey scale and then to binary ?<br>
