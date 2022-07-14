@@ -310,38 +310,38 @@ ouput:<br>
 ![image](https://user-images.githubusercontent.com/97970956/176413147-57ad7de0-8034-4950-944f-bc2a7d3276db.png)
 ![image](https://user-images.githubusercontent.com/97970956/176413236-bcfff73d-abb0-4c2a-af1f-458ef07d302f.png)
 
-**8.Image enhancement**
-from PIL import Image
-from PIL import ImageEnhance
-image=Image.open('nature.jpg')
-image.show()
+**8.Image enhancement**<br>
+from PIL import Image<br>
+from PIL import ImageEnhance<br>
+image=Image.open('nature.jpg')<br>
+image.show()<br>
 
-enh_bri=ImageEnhance.Brightness(image)
-brightness=1.5
-image_brightned=enh_bri.enhance(brightness)
-image_brightned.show()
+enh_bri=ImageEnhance.Brightness(image)<br>
+brightness=1.5<br>
+image_brightned=enh_bri.enhance(brightness)<br>
+image_brightned.show()<br>
 
-enh_col=ImageEnhance.Color(image)
-color=1.5
-image_colored=enh_col.enhance(color)
-image_colored.show()
+enh_col=ImageEnhance.Color(image)<br>
+color=1.5<br>
+image_colored=enh_col.enhance(color)<br>
+image_colored.show()<br>
 
-enh_con=ImageEnhance.Contrast(image)
-contrast=1.5
-image_contrasted=enh_col.enhance(contrast)
-image_contrasted.show()
+enh_con=ImageEnhance.Contrast(image)<br>
+contrast=1.5<br>
+image_contrasted=enh_col.enhance(contrast)<br>
+image_contrasted.show()<br>
 
-enh_sha=ImageEnhance.Sharpness(image)
-sharpness=3.0
-image_sharped=enh_sha.enhance(sharpness)
-image_sharped.show()
+enh_sha=ImageEnhance.Sharpness(image)<br>
+sharpness=3.0<br>
+image_sharped=enh_sha.enhance(sharpness)<br>
+image_sharped.show()<br>
 
 Output:<br>
-![image](https://user-images.githubusercontent.com/97970956/176422262-b2664c58-1c7b-4c4c-b59b-21be1d2ff4b7.png)
-![image](https://user-images.githubusercontent.com/97970956/176422298-ecc3bbe9-8ab8-4f54-90a7-5ebaa9e3c242.png)
-![image](https://user-images.githubusercontent.com/97970956/176422339-573b6029-7a41-42a1-8d16-fa62244c6d83.png)
-![image](https://user-images.githubusercontent.com/97970956/176422371-ff1b3598-634c-48c2-8317-8468571c21cb.png)
-![image](https://user-images.githubusercontent.com/97970956/176422432-f577810e-5225-4947-a8cf-1287deda10f3.png)
+![image](https://user-images.githubusercontent.com/97970956/176422262-b2664c58-1c7b-4c4c-b59b-21be1d2ff4b7.png)<br>
+![image](https://user-images.githubusercontent.com/97970956/176422298-ecc3bbe9-8ab8-4f54-90a7-5ebaa9e3c242.png)<br>
+![image](https://user-images.githubusercontent.com/97970956/176422339-573b6029-7a41-42a1-8d16-fa62244c6d83.png)<br>
+![image](https://user-images.githubusercontent.com/97970956/176422371-ff1b3598-634c-48c2-8317-8468571c21cb.png)<br>
+![image](https://user-images.githubusercontent.com/97970956/176422432-f577810e-5225-4947-a8cf-1287deda10f3.png)<br>
 
 **9.morphological**
 import cv2<br>
