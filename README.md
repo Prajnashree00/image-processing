@@ -14,7 +14,8 @@ img=mpimg.imread("d1.jpg")<br>
 plt.imshow(img) <br>
 ![image](https://user-images.githubusercontent.com/97970956/178448790-f2df7bb2-1c5e-43b7-afd0-e68889d85afe.png)<br>
 
-3.develop a program to perform linear transformation rotation from PIL import Image<br>
+3.develop a program to perform linear transformation rotation<br>
+from PIL import Image<br>
 img=Image.open("plant1.jpg")<br>
 img=img.rotate(180)<br>
 img.show()<br>
@@ -22,7 +23,7 @@ cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/97970956/178449546-bdab8987-7134-4a12-85a6-32ca286d082c.png)<br>
 
-4.DEVELOP PROGRAM TO CONVERT colorstring to RGB COLOR VALUES<br>
+4.Develop a program to convert color string RGB color values<br>
 import cv2<br>
 from PIL import ImageColor<br>
 img1=ImageColor.getrgb("yellow")<br>
@@ -35,6 +36,7 @@ OUTPUT:<br>
 (255, 255, 0)<br>
 (255, 0, 0)<br>
 (255, 192, 203)<br>
+
 5.Write a program to create image using color<br>
 from PIL import Image)<br>
 img=Image.new("RGB",(200,400),(255,255,0)))<br>
@@ -73,20 +75,8 @@ width: 259<br>
 height: 194<br>
 
 8.Resize the original image<br>
-import cv2
-img=cv2.imread('flower3.jpg')
-cv2.imshow("RGB",img)
-cv2.waitKey(0)
-#gray scale
-img=cv2.imread ('flower3.jpg',0)
-cv2.imshow("Gray",img)
-cv2.waitKey(0)
-#binary image
-ret,bw_img=cv2.threshold (img,127,255,cv2.THRESH_BINAR
-Y)
-cv2.imshow("Binary",bw_img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+
+
 9.convert the original to grey scale and then to binary ?<br>
 import cv2<br>
 
