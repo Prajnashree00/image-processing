@@ -73,17 +73,20 @@ width: 259<br>
 height: 194<br>
 
 8.Resize the original image<br>
-rom PIL import Image<br>
-image=Image.open("flower2.jpg")<br>
-print("Filename:",image.filename)<br>
-print("Format:",image.format)<br>
-print("Mode:",image.mode)<br>
-print("Size:",image.size)<br>
-print("Width:",image.width)<br>
-print("Height:",image.height)<br>
-image.close()<br>
-![image](https://user-images.githubusercontent.com/97970956/176482164-70e3fcb4-82a3-49f9-867b-2e6c599b3a1a.png)<br>
-
+import cv2
+img=cv2.imread('flower3.jpg')
+cv2.imshow("RGB",img)
+cv2.waitKey(0)
+#gray scale
+img=cv2.imread ('flower3.jpg',0)
+cv2.imshow("Gray",img)
+cv2.waitKey(0)
+#binary image
+ret,bw_img=cv2.threshold (img,127,255,cv2.THRESH_BINAR
+Y)
+cv2.imshow("Binary",bw_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 9.convert the original to grey scale and then to binary ?<br>
 import cv2<br>
 
