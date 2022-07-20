@@ -470,7 +470,7 @@ plt.plot(histr) <br>
 plt.show()<br>
 ![image](https://user-images.githubusercontent.com/97970956/178966396-859b2414-74a9-4139-a49c-f0afd4605926.png)<br>
 
-14.program to perform basic image data analysis using thransformation <br>
+**14.program to perform basic image data analysis using thransformation** <br>
 a.Image negative  <br>
 b.log transformation  <br>
 c.gamma correction <br>
@@ -487,14 +487,14 @@ plt.imshow(pic); <br>
 plt.axis('off'); <br>
 ![image](https://user-images.githubusercontent.com/97970956/179962279-e4c5f2b4-3bec-4245-9b4c-fe581764bbc5.png) <br>
 
-a.Image negative <br>
+**a.Image negative** <br>
 negative=255-pic    #neg=[l-1]-img <br>
 plt.figure(figsize=(6,6)) <br>
 plt.imshow(negative); <br>
 plt.axis('off'); <br>
 ![image](https://user-images.githubusercontent.com/97970956/179962367-2eead373-a248-4928-867e-24f781e7cfa8.png) <br>
 
-b.log transformation  <br>
+**b.log transformation**  <br>
 %matplotlib inline <br>
 
 import imageio <br>
@@ -513,7 +513,7 @@ plt.imshow(log_transform(),cmap=plt.get_cmap(name='gray')) <br>
 plt.axis('off'); <br>
 ![image](https://user-images.githubusercontent.com/97970956/179962541-822c2c53-2777-4040-a362-af86baa426bf.png) <br>
 
-c.gamma correction <br>
+**c.gamma correction** <br>
 import imageio <br>
 import matplotlib.pyplot as plt <br>
 
@@ -527,12 +527,12 @@ plt.imshow(gamma_correction) <br>
 plt.axis('off'); <br>
 ![image](https://user-images.githubusercontent.com/97970956/179962702-ad64abd2-997d-4036-871a-dafec6209f6b.png) <br>
 
-15. Program to perform basic image manipulation: <br>
+**15. Program to perform basic image manipulation: <br>
 a) Sharpness <br>
 b) Flipping <br>
 c) Cropping <br>
-
-a) Sharpness <br>
+**
+**a) Sharpness <br>**
 #image sharpen <br>
 from PIL import Image <br>
 from PIL  import ImageFilter <br>
@@ -551,7 +551,7 @@ plt.imshow(sharp) <br>
 plt.show() <br>
 ![image](https://user-images.githubusercontent.com/97970956/179963208-f9c42bc3-c37c-4fcd-990a-dbe1b07f2ec6.png) <br>
 
-b) Flipping <br>
+**b) Flipping **<br>
 #image flip <br>
 import matplotlib.pyplot as plt  <br>
 
@@ -569,7 +569,7 @@ plt.imshow(flip) <br>
 plt.show() <br>
 ![image](https://user-images.githubusercontent.com/97970956/179963398-c0c4fa0e-b3fb-49bf-bdc9-acef3de07f57.png) <br>
 
-c) Cropping <br>
+**c) Cropping **<br>
 #Importing Image class from PIL module <br> 
 from PIL import Image <br>
 import matplotlib.pyplot as plt <br>
