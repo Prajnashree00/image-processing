@@ -470,5 +470,60 @@ plt.plot(histr) <br>
 plt.show()<br>
 ![image](https://user-images.githubusercontent.com/97970956/178966396-859b2414-74a9-4139-a49c-f0afd4605926.png)<br>
 
+14.program to perform basic image data analysis using thransformation
+a.Image negative 
+b.log transformation 
+c.gamma correction
 
+%matplotlib inline
+import imageio
+import matplotlib.pyplot as plt
+import warnings 
+import matplotlib.cbook
+warnings.filterwarnings("ignore",category=matplotlib.cbook.mplDeprecation)
+pic=imageio.imread('tiger.jpg')
+plt.figure(figsize=(6,6))
+plt.imshow(pic);
+plt.axis('off');
+![image](https://user-images.githubusercontent.com/97970956/179962279-e4c5f2b4-3bec-4245-9b4c-fe581764bbc5.png)
+
+a.Image negative
+negative=255-pic    #neg=[l-1]-img
+plt.figure(figsize=(6,6))
+plt.imshow(negative);
+plt.axis('off');
+![image](https://user-images.githubusercontent.com/97970956/179962367-2eead373-a248-4928-867e-24f781e7cfa8.png)
+
+b.log transformation 
+%matplotlib inline
+
+import imageio
+import numpy as np
+import matplotlib.pyplot as plt
+
+pic=imageio.imread('tiger.jpg')
+gray=lambda rgb:np.dot(rgb[...,:3],[0.299,0.587,0.114])
+gray=gray(pic)
+max_=np.max(gray)
+
+def log_transform():
+    return(255/np.log(1+max_))*np.log(1+gray)
+plt.figure(figsize=(5,5))
+plt.imshow(log_transform(),cmap=plt.get_cmap(name='gray'))
+plt.axis('off');
+![image](https://user-images.githubusercontent.com/97970956/179962541-822c2c53-2777-4040-a362-af86baa426bf.png)
+
+c.gamma correction
+import imageio
+import matplotlib.pyplot as plt
+
+#gamma encoding
+pic=imageio.imread('tiger.jpg')
+gamma=2.2 #gamma<1~Drak; gamma>1~Bright
+
+gamma_correction=((pic/255)**(1/gamma))
+plt.figure(figsize=(5,5))
+plt.imshow(gamma_correction)
+plt.axis('off');
+![image](https://user-images.githubusercontent.com/97970956/179962702-ad64abd2-997d-4036-871a-dafec6209f6b.png)
 
