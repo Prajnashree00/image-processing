@@ -527,3 +527,65 @@ plt.imshow(gamma_correction)
 plt.axis('off');
 ![image](https://user-images.githubusercontent.com/97970956/179962702-ad64abd2-997d-4036-871a-dafec6209f6b.png)
 
+15. Program to perform basic image manipulation:
+a) Sharpness
+b) Flipping
+c) Cropping
+
+a) Sharpness
+#image sharpen
+from PIL import Image
+from PIL  import ImageFilter
+import matplotlib.pyplot as plt
+
+#Load the image 
+my_image=Image.open('tiger.jpg')
+
+#Use sharpen function
+sharp=my_image.filter(ImageFilter.SHARPEN)
+
+#Save the image 
+sharp.save('D:/prajna/image_sharpen.jpg')
+sharp.show()
+plt.imshow(sharp)
+plt.show()
+![image](https://user-images.githubusercontent.com/97970956/179963208-f9c42bc3-c37c-4fcd-990a-dbe1b07f2ec6.png)
+
+b) Flipping
+#image flip
+import matplotlib.pyplot as plt 
+
+#laod the image
+img=Image.open('tiger.jpg')
+plt.imshow(img)
+plt.show()
+
+#use the flip function
+flip=img.transpose(Image.FLIP_LEFT_RIGHT)
+
+#save the image
+flip.save('D:/prajna/image_flip.jpg')
+plt.imshow(flip)
+plt.show()
+![image](https://user-images.githubusercontent.com/97970956/179963398-c0c4fa0e-b3fb-49bf-bdc9-acef3de07f57.png)
+
+c) Cropping
+#Importing Image class from PIL module 
+from PIL import Image
+import matplotlib.pyplot as plt
+#opens a image in RGB mode
+im=Image.open('tiger.jpg')
+
+#size of the image in pixels(size of original image
+#(this is not mandatory)
+width,height=im.size
+
+#cropped image of above dimension
+#(it will not change original image)
+im1=im.crop((500,500,3000,4000))
+
+#shows the image in image viewer
+im1.show()
+plt.imshow(im1)
+plt.show()
+![image](https://user-images.githubusercontent.com/97970956/179963638-88535d50-ccbb-4b5f-b0d0-121d97c30b19.png)
