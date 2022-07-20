@@ -470,122 +470,123 @@ plt.plot(histr) <br>
 plt.show()<br>
 ![image](https://user-images.githubusercontent.com/97970956/178966396-859b2414-74a9-4139-a49c-f0afd4605926.png)<br>
 
-14.program to perform basic image data analysis using thransformation
-a.Image negative 
-b.log transformation 
-c.gamma correction
+14.program to perform basic image data analysis using thransformation <br>
+a.Image negative  <br>
+b.log transformation  <br>
+c.gamma correction <br>
 
-%matplotlib inline
-import imageio
-import matplotlib.pyplot as plt
-import warnings 
-import matplotlib.cbook
-warnings.filterwarnings("ignore",category=matplotlib.cbook.mplDeprecation)
+%matplotlib inline <br>
+import imageio <br>
+import matplotlib.pyplot as plt <br>
+import warnings  <br>
+import matplotlib.cbook <br>
+warnings.filterwarnings("ignore",category=matplotlib.cbook.mplDeprecation) <br>
+pic=imageio.imread('tiger.jpg') <br>
+plt.figure(figsize=(6,6)) <br>
+plt.imshow(pic); <br>
+plt.axis('off'); <br>
+![image](https://user-images.githubusercontent.com/97970956/179962279-e4c5f2b4-3bec-4245-9b4c-fe581764bbc5.png) <br>
+
+a.Image negative <br>
+negative=255-pic    #neg=[l-1]-img <br>
+plt.figure(figsize=(6,6)) <br>
+plt.imshow(negative); <br>
+plt.axis('off'); <br>
+![image](https://user-images.githubusercontent.com/97970956/179962367-2eead373-a248-4928-867e-24f781e7cfa8.png) <br>
+
+b.log transformation  <br>
+%matplotlib inline <br>
+
+import imageio <br>
+import numpy as np <br>
+import matplotlib.pyplot as plt <br>
+
 pic=imageio.imread('tiger.jpg')
-plt.figure(figsize=(6,6))
-plt.imshow(pic);
-plt.axis('off');
-![image](https://user-images.githubusercontent.com/97970956/179962279-e4c5f2b4-3bec-4245-9b4c-fe581764bbc5.png)
+gray=lambda rgb:np.dot(rgb[...,:3],[0.299,0.587,0.114]) <br>
+gray=gray(pic) <br>
+max_=np.max(gray) <br>
 
-a.Image negative
-negative=255-pic    #neg=[l-1]-img
-plt.figure(figsize=(6,6))
-plt.imshow(negative);
-plt.axis('off');
-![image](https://user-images.githubusercontent.com/97970956/179962367-2eead373-a248-4928-867e-24f781e7cfa8.png)
+def log_transform(): <br> <br>
+    return(255/np.log(1+max_))*np.log(1+gray) <br>
+plt.figure(figsize=(5,5)) <br>
+plt.imshow(log_transform(),cmap=plt.get_cmap(name='gray')) <br>
+plt.axis('off'); <br>
+![image](https://user-images.githubusercontent.com/97970956/179962541-822c2c53-2777-4040-a362-af86baa426bf.png) <br>
 
-b.log transformation 
-%matplotlib inline
+c.gamma correction <br>
+import imageio <br>
+import matplotlib.pyplot as plt <br>
 
-import imageio
-import numpy as np
-import matplotlib.pyplot as plt
+#gamma encoding <br>
+pic=imageio.imread('tiger.jpg') <br>
+gamma=2.2 #gamma<1~Drak; gamma>1~Bright <br>
 
-pic=imageio.imread('tiger.jpg')
-gray=lambda rgb:np.dot(rgb[...,:3],[0.299,0.587,0.114])
-gray=gray(pic)
-max_=np.max(gray)
+gamma_correction=((pic/255)**(1/gamma)) <br>
+plt.figure(figsize=(5,5)) <br>
+plt.imshow(gamma_correction) <br>
+plt.axis('off'); <br>
+![image](https://user-images.githubusercontent.com/97970956/179962702-ad64abd2-997d-4036-871a-dafec6209f6b.png) <br>
 
-def log_transform():
-    return(255/np.log(1+max_))*np.log(1+gray)
-plt.figure(figsize=(5,5))
-plt.imshow(log_transform(),cmap=plt.get_cmap(name='gray'))
-plt.axis('off');
-![image](https://user-images.githubusercontent.com/97970956/179962541-822c2c53-2777-4040-a362-af86baa426bf.png)
+15. Program to perform basic image manipulation: <br>
+a) Sharpness <br>
+b) Flipping <br>
+c) Cropping <br>
 
-c.gamma correction
-import imageio
-import matplotlib.pyplot as plt
+a) Sharpness <br>
+#image sharpen <br>
+from PIL import Image <br>
+from PIL  import ImageFilter <br>
+import matplotlib.pyplot as plt <br>
 
-#gamma encoding
-pic=imageio.imread('tiger.jpg')
-gamma=2.2 #gamma<1~Drak; gamma>1~Bright
+#Load the image  <br>
+my_image=Image.open('tiger.jpg') <br>
 
-gamma_correction=((pic/255)**(1/gamma))
-plt.figure(figsize=(5,5))
-plt.imshow(gamma_correction)
-plt.axis('off');
-![image](https://user-images.githubusercontent.com/97970956/179962702-ad64abd2-997d-4036-871a-dafec6209f6b.png)
+#Use sharpen function <br>
+sharp=my_image.filter(ImageFilter.SHARPEN) <br>
 
-15. Program to perform basic image manipulation:
-a) Sharpness
-b) Flipping
-c) Cropping
+#Save the image  <br>
+sharp.save('D:/prajna/image_sharpen.jpg') <br>
+sharp.show() <br>
+plt.imshow(sharp) <br>
+plt.show() <br>
+![image](https://user-images.githubusercontent.com/97970956/179963208-f9c42bc3-c37c-4fcd-990a-dbe1b07f2ec6.png) <br>
 
-a) Sharpness
-#image sharpen
-from PIL import Image
-from PIL  import ImageFilter
-import matplotlib.pyplot as plt
+b) Flipping <br>
+#image flip <br>
+import matplotlib.pyplot as plt  <br>
 
-#Load the image 
-my_image=Image.open('tiger.jpg')
+#laod the image <br>
+img=Image.open('tiger.jpg') <br>
+plt.imshow(img) <br>
+plt.show() <br>
 
-#Use sharpen function
-sharp=my_image.filter(ImageFilter.SHARPEN)
+#use the flip function <br>
+flip=img.transpose(Image.FLIP_LEFT_RIGHT) <br>
 
-#Save the image 
-sharp.save('D:/prajna/image_sharpen.jpg')
-sharp.show()
-plt.imshow(sharp)
-plt.show()
-![image](https://user-images.githubusercontent.com/97970956/179963208-f9c42bc3-c37c-4fcd-990a-dbe1b07f2ec6.png)
+#save the image <br>
+flip.save('D:/prajna/image_flip.jpg') <br>
+plt.imshow(flip) <br>
+plt.show() <br>
+![image](https://user-images.githubusercontent.com/97970956/179963398-c0c4fa0e-b3fb-49bf-bdc9-acef3de07f57.png) <br>
 
-b) Flipping
-#image flip
-import matplotlib.pyplot as plt 
+c) Cropping <br>
+#Importing Image class from PIL module <br> 
+from PIL import Image <br>
+import matplotlib.pyplot as plt <br>
+#opens a image in RGB mode <br>
+im=Image.open('tiger.jpg') <br>
 
-#laod the image
-img=Image.open('tiger.jpg')
-plt.imshow(img)
-plt.show()
+#size of the image in pixels(size of original image <br>
+#(this is not mandatory) <br>
+width,height=im.size <br>
 
-#use the flip function
-flip=img.transpose(Image.FLIP_LEFT_RIGHT)
+#cropped image of above dimension <br>
+#(it will not change original image) <br>
+im1=im.crop((500,500,3000,4000)) <br>
 
-#save the image
-flip.save('D:/prajna/image_flip.jpg')
-plt.imshow(flip)
-plt.show()
-![image](https://user-images.githubusercontent.com/97970956/179963398-c0c4fa0e-b3fb-49bf-bdc9-acef3de07f57.png)
-
-c) Cropping
-#Importing Image class from PIL module 
-from PIL import Image
-import matplotlib.pyplot as plt
-#opens a image in RGB mode
-im=Image.open('tiger.jpg')
-
-#size of the image in pixels(size of original image
-#(this is not mandatory)
-width,height=im.size
-
-#cropped image of above dimension
-#(it will not change original image)
-im1=im.crop((500,500,3000,4000))
-
-#shows the image in image viewer
-im1.show()
-plt.imshow(im1)
-plt.show()
-![image](https://user-images.githubusercontent.com/97970956/179963638-88535d50-ccbb-4b5f-b0d0-121d97c30b19.png)
+#shows the image in image viewer <br>
+im1.show() <br>
+plt.imshow(im1) <br>
+plt.show() <br>
+![image](https://user-images.githubusercontent.com/97970956/179963638-88535d50-ccbb-4b5f-b0d0-121d97c30b19.png) <br>
+ 
