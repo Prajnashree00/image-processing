@@ -533,63 +533,63 @@ b) Flipping <br>
 c) Cropping <br>
 **
 **a) Sharpness <br>**
-#image sharpen
-from PIL import Image
-from PIL  import ImageFilter
-import matplotlib.pyplot as plt
+#image sharpen<br>
+from PIL import Image<br>
+from PIL  import ImageFilter<br>
+import matplotlib.pyplot as plt<br>
 
-#Load the image 
-my_image=Image.open('puppy2.jpg')
+#Load the image <br>
+my_image=Image.open('puppy2.jpg')<br>
 
-#Use sharpen function
-sharp=my_image.filter(ImageFilter.SHARPEN)
+#Use sharpen function<br>
+sharp=my_image.filter(ImageFilter.SHARPEN)<br>
 
-#Save the image 
-sharp.save('D:/prajna/image_sharpen.jpg')
-sharp.show()
-plt.imshow(sharp)
-plt.show()
-![image](https://user-images.githubusercontent.com/97970956/180189629-403c642f-5162-47e5-bb0c-a923fc1b1cc1.png)
-
-
-**b) Flipping **<br>
-#image flip
-import matplotlib.pyplot as plt 
-
-#laod the image
-img=Image.open('puppy2.jpg')
-plt.imshow(img)
-plt.show()
-
-#use the flip function
-flip=img.transpose(Image.FLIP_LEFT_RIGHT)
-
-#save the image
-flip.save('D:/prajna/image_flip.jpg')
-plt.imshow(flip)
-plt.show()
-![image](https://user-images.githubusercontent.com/97970956/180189800-d1bff529-713a-4bd0-bd5f-a46cd2eb57e3.png)
+#Save the image <br>
+sharp.save('D:/prajna/image_sharpen.jpg')<br>
+sharp.show()<br>
+plt.imshow(sharp)<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97970956/180189629-403c642f-5162-47e5-bb0c-a923fc1b1cc1.png)<br>
 
 
-**c) Cropping **<br>
-#Importing Image class from PIL module 
-from PIL import Image
-import matplotlib.pyplot as plt
-#opens a image in RGB mode
-im=Image.open('puppy2.jpg')
+**b) Flipping **<br><br>
+#image flip<br>
+import matplotlib.pyplot as plt <br>
 
-#size of the image in pixels(size of original image
-#(this is not mandatory)
-width,height=im.size
+#laod the image<br>
+img=Image.open('puppy2.jpg')<br>
+plt.imshow(img)<br>
+plt.show()<br>
 
-#cropped image of above dimension
-#(it will not change original image)
-im1=im.crop((280,100,800,600))
+#use the flip function<br>
+flip=img.transpose(Image.FLIP_LEFT_RIGHT)<br>
 
-#shows the image in image viewer
-im1.show()
-plt.imshow(im1)
-plt.show()
-![image](https://user-images.githubusercontent.com/97970956/180190015-b6086975-02b4-45d1-8a1c-e5f3d6502a87.png)
+#save the image<br>
+flip.save('D:/prajna/image_flip.jpg')<br>
+plt.imshow(flip)<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97970956/180189800-d1bff529-713a-4bd0-bd5f-a46cd2eb57e3.png)<br>
+
+
+**c) Cropping **<br><br>
+#Importing Image class from PIL module <br>
+from PIL import Image<br>
+import matplotlib.pyplot as plt<br>
+#opens a image in RGB mode<br>
+im=Image.open('puppy2.jpg')<br>
+
+#size of the image in pixels(size of original image<br>
+#(this is not mandatory)<br>
+width,height=im.size<br>
+
+#cropped image of above dimension<br>
+#(it will not change original image)<br>
+im1=im.crop((280,100,800,600))<br>
+<br>
+#shows the image in image viewer<br>
+im1.show()<br>
+plt.imshow(im1)<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97970956/180190015-b6086975-02b4-45d1-8a1c-e5f3d6502a87.png)<br>
 
  
