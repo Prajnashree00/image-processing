@@ -616,3 +616,90 @@ for y in range(imgsize[1]):
 
 plt.imshow(arr, cmap='gray')
 plt.show()
+
+![image](https://user-images.githubusercontent.com/97970956/180202203-0eef0b10-e855-4535-9360-8c799cdb1f58.png)
+
+from PIL import Image
+import matplotlib.pyplot as plt
+  
+# Create an image as input:
+input_image = Image.new(mode="RGB", size=(400, 400),
+                        color="blue")
+  
+# save the image as "input.png"
+#(not mandatory)
+#input_image.save("input", format="png")
+  
+# Extracting pixel map:
+pixel_map = input_image.load()
+  
+# Extracting the width and height
+# of the image:
+width, height = input_image.size
+z = 100
+for i in range(width):
+    for j in range(height):
+        
+        # the following if part will create
+        # a square with color orange
+        if((i >= z and i <= width-z) and (j >= z and j <= height-z)):
+            
+            # RGB value of orange.
+            pixel_map[i, j] = (255, 165, 255)
+  
+        # the following else part will fill the
+        # rest part with color light salmon.
+        else:
+            
+            # RGB value of light salmon.
+            pixel_map[i, j] = (255, 160, 0)
+  
+# The following loop will create a cross
+# of color blue.
+for i in range(width):
+    
+    # RGB value of Blue.
+    pixel_map[i, i] = (0, 0, 255)
+    pixel_map[i, width-i-1] = (0, 0, 255)
+  
+# Saving the final output
+# as "output.png":
+#input_image.save("output", format="png")
+plt.imshow(input_image)
+plt.show()  
+# use input_image.show() to see the image on the
+# output screen.
+![image](https://user-images.githubusercontent.com/97970956/180202393-01ac441f-15d4-443c-a0b0-3e38b72dc97a.png)
+
+
+rgb
+from PIL import Image
+import numpy as np
+w, h = 600, 600
+data = np.zeros((h, w, 3), dtype=np.uint8)
+data[0:100, 0:100] = [255, 0, 0]
+data[100:200, 100:200] = [255, 0, 255]
+data[200:300, 200:300] = [0, 255, 0]
+data[300:400, 300:400] = [130, 255, 0]
+data[400:500, 400:500] = [0, 255, 170]
+data[500:600, 500:600] = [180, 255, 0]
+# red patch in upper left
+img = Image.fromarray(data, 'RGB')
+img.save('my.png')
+plt.imshow(img)
+plt.show()
+
+![image](https://user-images.githubusercontent.com/97970956/180202481-a6e4be60-9f9e-4334-a8c3-647d3b1dd3f2.png)
+
+#image to matrrix
+import matplotlib.image as image
+img=image.imread('puppy2.jpg')
+print('The Shape of the image is:',img.shape)
+print('The image as array is:')
+print(img)
+
+![image](https://user-images.githubusercontent.com/97970956/180202646-2e5a517d-a319-41fb-8769-158724cc637d.png)
+![image](https://user-images.githubusercontent.com/97970956/180202680-1f605cf5-33cc-4374-8536-82ca1336a098.png)
+
+
+
