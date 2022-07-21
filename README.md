@@ -674,7 +674,7 @@ plt.show()  <br>
 ![image](https://user-images.githubusercontent.com/97970956/180202393-01ac441f-15d4-443c-a0b0-3e38b72dc97a.png)<br>
 
 
-rgb<br>
+**rgb<br>**
 from PIL import Image<br>
 import numpy as np<br>
 w, h = 600, 600<br>
@@ -693,7 +693,7 @@ plt.show()<br>
 <br>
 ![image](https://user-images.githubusercontent.com/97970956/180202481-a6e4be60-9f9e-4334-a8c3-647d3b1dd3f2.png)<br>
 
-#image to matrrix<br>
+**#image to matrrix<br>**
 import matplotlib.image as image<br>
 img=image.imread('puppy2.jpg')<br>
 print('The Shape of the image is:',img.shape)<br>
