@@ -592,114 +592,116 @@ plt.imshow(im1)<br>
 plt.show()<br>
 ![image](https://user-images.githubusercontent.com/97970956/180190015-b6086975-02b4-45d1-8a1c-e5f3d6502a87.png)<br>
 
- import numpy as np
-import matplotlib.pyplot as plt
+**#gradient image**<br>
+ import numpy as np<br>
+import matplotlib.pyplot as plt<br>
 
-arr = np.zeros((256,256,3), dtype=np.uint8)
-imgsize = arr.shape[:2]
-innerColor = (255, 255, 255)
-outerColor = (0, 0, 0)
-for y in range(imgsize[1]):
-    for x in range(imgsize[0]):
-        #Find the distance to the center
-        distanceToCenter = np.sqrt((x - imgsize[0]//2) ** 2 + (y - imgsize[1]//2) ** 2)
+arr = np.zeros((256,256,3), dtype=np.uint8)<br>
+imgsize = arr.shape[:2]<br>
+innerColor = (255, 255, 255)<br>
+outerColor = (0, 0, 0)<br>
+for y in range(imgsize[1]):<br>
+    for x in range(imgsize[0]):<br>
+        #Find the distance to the center<br>
+        distanceToCenter = np.sqrt((x - imgsize[0]//2) ** 2 + (y - imgsize[1]//2) ** 2)<br>
 
-        #Make it on a scale from 0 to 1innerColor
-        distanceToCenter = distanceToCenter / (np.sqrt(2) * imgsize[0]/2)
+        #Make it on a scale from 0 to 1innerColor<br>
+        distanceToCenter = distanceToCenter / (np.sqrt(2) * imgsize[0]/2)<br>
 
-        #Calculate r, g, and b values
-        r = outerColor[0] * distanceToCenter + innerColor[0] * (1 - distanceToCenter)
-        g = outerColor[1] * distanceToCenter + innerColor[1] * (1 - distanceToCenter)
-        b = outerColor[2] * distanceToCenter + innerColor[2] * (1 - distanceToCenter)
-        # print r, g, b
-        arr[y, x] = (int(r), int(g), int(b))
+        #Calculate r, g, and b values<br>
+        r = outerColor[0] * distanceToCenter + innerColor[0] * (1 - distanceToCenter)<br>
+        g = outerColor[1] * distanceToCenter + innerColor[1] * (1 - distanceToCenter)<br>
+        b = outerColor[2] * distanceToCenter + innerColor[2] * (1 - distanceToCenter)<br>
+        # print r, g, b<br>
+        arr[y, x] = (int(r), int(g), int(b))<br>
 
-plt.imshow(arr, cmap='gray')
-plt.show()
+plt.imshow(arr, cmap='gray')<br>
+plt.show()<br>
+<br>
+![image](https://user-images.githubusercontent.com/97970956/180202203-0eef0b10-e855-4535-9360-8c799cdb1f58.png)<br>
 
-![image](https://user-images.githubusercontent.com/97970956/180202203-0eef0b10-e855-4535-9360-8c799cdb1f58.png)
-
-from PIL import Image
-import matplotlib.pyplot as plt
+<br>
+from PIL import Image<br>
+import matplotlib.pyplot as plt<br>
   
-# Create an image as input:
-input_image = Image.new(mode="RGB", size=(400, 400),
-                        color="blue")
+# Create an image as input:<br>
+input_image = Image.new(mode="RGB", size=(400, 400),<br>
+                        color="blue")<br>
   
-# save the image as "input.png"
-#(not mandatory)
-#input_image.save("input", format="png")
+# save the image as "input.png"<br>
+#(not mandatory)<br>
+#input_image.save("input", format="png")<br>
   
-# Extracting pixel map:
-pixel_map = input_image.load()
+# Extracting pixel map:<br>
+pixel_map = input_image.load()<br>
   
-# Extracting the width and height
-# of the image:
-width, height = input_image.size
-z = 100
-for i in range(width):
-    for j in range(height):
-        
-        # the following if part will create
-        # a square with color orange
-        if((i >= z and i <= width-z) and (j >= z and j <= height-z)):
+# Extracting the width and height<br>
+# of the image:<br>
+width, height = input_image.size<br>
+z = 100<br>
+for i in range(width):<br>
+    for j in range(height):<br>
+        <br>
+        # the following if part will create<br>
+        # a square with color orange<br>
+        if((i >= z and i <= width-z) and (j >= z and j <= height-z)):<br>
             
-            # RGB value of orange.
-            pixel_map[i, j] = (255, 165, 255)
+            # RGB value of orange.<br>
+            pixel_map[i, j] = (255, 165, 255)<br>
   
-        # the following else part will fill the
-        # rest part with color light salmon.
-        else:
+        # the following else part will fill the<br>
+        # rest part with color light salmon.<br>
+        else:<br>
             
-            # RGB value of light salmon.
-            pixel_map[i, j] = (255, 160, 0)
+            # RGB value of light salmon.<br>
+            pixel_map[i, j] = (255, 160, 0)<br>
   
-# The following loop will create a cross
-# of color blue.
-for i in range(width):
+# The following loop will create a cross<br>
+# of color blue.<br>
+for i in range(width):<br>
     
-    # RGB value of Blue.
-    pixel_map[i, i] = (0, 0, 255)
-    pixel_map[i, width-i-1] = (0, 0, 255)
+    # RGB value of Blue.<br>
+    pixel_map[i, i] = (0, 0, 255)<br>
+    pixel_map[i, width-i-1] = (0, 0, 255)<br>
   
-# Saving the final output
-# as "output.png":
-#input_image.save("output", format="png")
-plt.imshow(input_image)
-plt.show()  
-# use input_image.show() to see the image on the
-# output screen.
-![image](https://user-images.githubusercontent.com/97970956/180202393-01ac441f-15d4-443c-a0b0-3e38b72dc97a.png)
+# Saving the final output<br>
+# as "output.png":<br>
+#input_image.save("output", format="png")<br>
+plt.imshow(input_image)<br>
+plt.show()  <br>
+# use input_image.show() to see the image on the<br>
+# output screen.<br>
+![image](https://user-images.githubusercontent.com/97970956/180202393-01ac441f-15d4-443c-a0b0-3e38b72dc97a.png)<br>
 
 
-rgb
-from PIL import Image
-import numpy as np
-w, h = 600, 600
-data = np.zeros((h, w, 3), dtype=np.uint8)
-data[0:100, 0:100] = [255, 0, 0]
-data[100:200, 100:200] = [255, 0, 255]
-data[200:300, 200:300] = [0, 255, 0]
-data[300:400, 300:400] = [130, 255, 0]
-data[400:500, 400:500] = [0, 255, 170]
-data[500:600, 500:600] = [180, 255, 0]
-# red patch in upper left
-img = Image.fromarray(data, 'RGB')
-img.save('my.png')
-plt.imshow(img)
-plt.show()
+rgb<br>
+from PIL import Image<br>
+import numpy as np<br>
+w, h = 600, 600<br>
+data = np.zeros((h, w, 3), dtype=np.uint8)<br>
+data[0:100, 0:100] = [255, 0, 0]<br>
+data[100:200, 100:200] = [255, 0, 255]<br>
+data[200:300, 200:300] = [0, 255, 0]<br>
+data[300:400, 300:400] = [130, 255, 0]<br>
+data[400:500, 400:500] = [0, 255, 170]<br>
+data[500:600, 500:600] = [180, 255, 0]<br>
+# red patch in upper left<br>
+img = Image.fromarray(data, 'RGB')<br>
+img.save('my.png')<br>
+plt.imshow(img)<br>
+plt.show()<br>
+<br>
+![image](https://user-images.githubusercontent.com/97970956/180202481-a6e4be60-9f9e-4334-a8c3-647d3b1dd3f2.png)<br>
 
-![image](https://user-images.githubusercontent.com/97970956/180202481-a6e4be60-9f9e-4334-a8c3-647d3b1dd3f2.png)
+#image to matrrix<br>
+import matplotlib.image as image<br>
+img=image.imread('puppy2.jpg')<br>
+print('The Shape of the image is:',img.shape)<br>
+print('The image as array is:')<br>
+print(img)<br>
 
-#image to matrrix
-import matplotlib.image as image
-img=image.imread('puppy2.jpg')
-print('The Shape of the image is:',img.shape)
-print('The image as array is:')
-print(img)
-
-![image](https://user-images.githubusercontent.com/97970956/180202646-2e5a517d-a319-41fb-8769-158724cc637d.png)
-![image](https://user-images.githubusercontent.com/97970956/180202680-1f605cf5-33cc-4374-8536-82ca1336a098.png)
-
+![image](https://user-images.githubusercontent.com/97970956/180202646-2e5a517d-a319-41fb-8769-158724cc637d.png)<br>
+![image](https://user-images.githubusercontent.com/97970956/180202680-1f605cf5-33cc-4374-8536-82ca1336a098.png)<br>
+<br>
 
 
