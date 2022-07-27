@@ -704,65 +704,65 @@ print(img)<br>
 ![image](https://user-images.githubusercontent.com/97970956/180202680-1f605cf5-33cc-4374-8536-82ca1336a098.png)<br>
 <br>
 
-# example of pixel normalization
-from numpy import asarray
-from PIL import Image
-# load image
-image = Image.open('rabbit.jpg')
-pixels = asarray(image)
-# confirm pixel range is 0-255
-#print('Data Type: %s' % pixels.dtype)
-print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))
-# convert from integers to floats
-pixels = pixels.astype('float32')
-# normalize to the range 0-1
-pixels /= 255.0
-# confirm the normalization
-print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))
+# example of pixel normalization<br>
+from numpy import asarray<br>
+from PIL import Image<br>
+# load image<br>
+image = Image.open('rabbit.jpg')<br>
+pixels = asarray(image)<br>
+# confirm pixel range is 0-255<br>
+#print('Data Type: %s' % pixels.dtype)<br>
+print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))<br>
+# convert from integers to floats<br>
+pixels = pixels.astype('float32')<br>
+# normalize to the range 0-1<br>
+pixels /= 255.0<br>
+# confirm the normalization<br>
+print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))<br>
 
-output:
-![image](https://user-images.githubusercontent.com/97970956/181229783-c0281e9a-87bb-44be-b9e8-97460e998790.png)
-#max
-import imageio
-import numpy as np
-import matplotlib.pyplot as plt
-img=imageio.imread('rabbit.jpg' )
-plt.imshow(img)
-plt.show()
-max_channels = np.amax([np.amax(img[:,:,0]), np.amax(img[:,:,1]),np.amax(img[:,:,2])])
+output:<br>
+![image](https://user-images.githubusercontent.com/97970956/181229783-c0281e9a-87bb-44be-b9e8-97460e998790.png)<br>
+#max<br>
+import imageio<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+img=imageio.imread('rabbit.jpg' )<br>
+plt.imshow(img)<br>
+plt.show()<br>
+max_channels = np.amax([np.amax(img[:,:,0]), np.amax(img[:,:,1]),np.amax(img[:,:,2])])<br>
 
-print(max_channels)
-![image](https://user-images.githubusercontent.com/97970956/181229918-34ff548e-d8d9-4558-8c2b-454aa1621d10.png)
+print(max_channels)<br>
+![image](https://user-images.githubusercontent.com/97970956/181229918-34ff548e-d8d9-4558-8c2b-454aa1621d10.png)<br>
 
-#min
-import imageio
-import numpy as np
-import matplotlib.pyplot as plt
-img=imageio.imread('rabbit.jpg' )
-plt.imshow(img)
-plt.show()
-min_channels = np.amin([np.min(img[:,:,0]), np.amin(img[:,:,1]),np.amin(img[:,:,2])])
+#min<br>
+import imageio<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+img=imageio.imread('rabbit.jpg' )<br>
+plt.imshow(img)<br>
+plt.show()<br>
+min_channels = np.amin([np.min(img[:,:,0]), np.amin(img[:,:,1]),np.amin(img[:,:,2])])<br>
 
-print(min_channels)
-![image](https://user-images.githubusercontent.com/97970956/181230458-2413e504-3170-4668-9b2b-914fa11fe1db.png)
+print(min_channels)<br>
+![image](https://user-images.githubusercontent.com/97970956/181230458-2413e504-3170-4668-9b2b-914fa11fe1db.png)<br>
 
 
 
-#average
-import imageio
-import matplotlib.pyplot as plt
-img=imageio.imread("rabbit.jpg")
-plt.imshow(img)
-np.average(img)
-![image](https://user-images.githubusercontent.com/97970956/181230295-2da1858d-6982-404e-9a32-dfcd776321cf.png)
+#average<br>
+import imageio<br>
+import matplotlib.pyplot as plt<br>
+img=imageio.imread("rabbit.jpg")<br>
+plt.imshow(img)<br>
+np.average(img)<br>
+![image](https://user-images.githubusercontent.com/97970956/181230295-2da1858d-6982-404e-9a32-dfcd776321cf.png)<br><br>
 
-from PIL import Image,ImageStat
-import matplotlib.pyplot as plt
-im=Image.open('rabbit.jpg')
-plt.imshow(im)
-plt.show()
-stat=ImageStat.Stat(im)
-print(stat.stddev)
-![image](https://user-images.githubusercontent.com/97970956/181230572-86b10a17-92a1-40d5-a9b4-5eb6ec43eee6.png)
+from PIL import Image,ImageStat<br>
+import matplotlib.pyplot as plt<br>
+im=Image.open('rabbit.jpg')<br>
+plt.imshow(im)<br>
+plt.show()<br>
+stat=ImageStat.Stat(im)<br>
+print(stat.stddev)<br>
+![image](https://user-images.githubusercontent.com/97970956/181230572-86b10a17-92a1-40d5-a9b4-5eb6ec43eee6.png)<br>
 
 
