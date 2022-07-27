@@ -765,4 +765,33 @@ stat=ImageStat.Stat(im)<br>
 print(stat.stddev)<br>
 ![image](https://user-images.githubusercontent.com/97970956/181230572-86b10a17-92a1-40d5-a9b4-5eb6ec43eee6.png)<br>
 
+# Python3 program for printing<br>
+# the rectangular pattern<br>
+ 
+# Function to print the pattern<br>
+def printPattern(n):<br>
+ 
+    arraySize = n * 2 - 1;<br>
+    result = [[0 for x in range(arraySize)]<br>
+                 for y in range(arraySize)];<br>
+         
+    # Fill the values<br>
+    for i in range(arraySize):<br>
+        for j in range(arraySize):<br>
+            if(abs(i - (arraySize // 2)) ><br>
+               abs(j - (arraySize // 2))):<br>
+                result[i][j] = abs(i - (arraySize // 2));<br>
+            else:<br>
+                result[i][j] = abs(j - (arraySize // 2));<br>
+             
+    # Print the array<br>
+    for i in range(arraySize):<br>
+        for j in range(arraySize):<br>
+            print(result[i][j], end = " ");<br>
+        print("");<br>
+ 
+# Driver Code<br>
+n = 4;<br>
+ 
+printPattern(n);<br>
 
