@@ -795,3 +795,5 @@ n = 4;<br>
  
 printPattern(n);<br>
 
+![image](https://user-images.githubusercontent.com/97970956/181233899-5ebaf44f-8f12-448b-b499-652e1ff6cdf8.png)
+
