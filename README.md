@@ -704,4 +704,65 @@ print(img)<br>
 ![image](https://user-images.githubusercontent.com/97970956/180202680-1f605cf5-33cc-4374-8536-82ca1336a098.png)<br>
 <br>
 
+# example of pixel normalization
+from numpy import asarray
+from PIL import Image
+# load image
+image = Image.open('rabbit.jpg')
+pixels = asarray(image)
+# confirm pixel range is 0-255
+#print('Data Type: %s' % pixels.dtype)
+print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))
+# convert from integers to floats
+pixels = pixels.astype('float32')
+# normalize to the range 0-1
+pixels /= 255.0
+# confirm the normalization
+print('Min: %.3f, Max: %.3f' % (pixels.min(), pixels.max()))
+
+output:
+![image](https://user-images.githubusercontent.com/97970956/181229783-c0281e9a-87bb-44be-b9e8-97460e998790.png)
+#max
+import imageio
+import numpy as np
+import matplotlib.pyplot as plt
+img=imageio.imread('rabbit.jpg' )
+plt.imshow(img)
+plt.show()
+max_channels = np.amax([np.amax(img[:,:,0]), np.amax(img[:,:,1]),np.amax(img[:,:,2])])
+
+print(max_channels)
+![image](https://user-images.githubusercontent.com/97970956/181229918-34ff548e-d8d9-4558-8c2b-454aa1621d10.png)
+
+#min
+import imageio
+import numpy as np
+import matplotlib.pyplot as plt
+img=imageio.imread('rabbit.jpg' )
+plt.imshow(img)
+plt.show()
+min_channels = np.amin([np.min(img[:,:,0]), np.amin(img[:,:,1]),np.amin(img[:,:,2])])
+
+print(min_channels)
+![image](https://user-images.githubusercontent.com/97970956/181230458-2413e504-3170-4668-9b2b-914fa11fe1db.png)
+
+
+
+#average
+import imageio
+import matplotlib.pyplot as plt
+img=imageio.imread("rabbit.jpg")
+plt.imshow(img)
+np.average(img)
+![image](https://user-images.githubusercontent.com/97970956/181230295-2da1858d-6982-404e-9a32-dfcd776321cf.png)
+
+from PIL import Image,ImageStat
+import matplotlib.pyplot as plt
+im=Image.open('rabbit.jpg')
+plt.imshow(im)
+plt.show()
+stat=ImageStat.Stat(im)
+print(stat.stddev)
+![image](https://user-images.githubusercontent.com/97970956/181230572-86b10a17-92a1-40d5-a9b4-5eb6ec43eee6.png)
+
 
