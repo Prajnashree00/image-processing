@@ -1,5 +1,5 @@
 # image-processing<br>
-1.develop a program to display grayscal;e image in using read and write operation
+1.develop a program to display grayscal;e image in using read and write operation<br>
 import cv2<br>
 img=cv2.imread('leaf1.jpg',0)<br>
 cv2.imshow('leaf1',img)<br>
