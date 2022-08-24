@@ -622,19 +622,15 @@ plt.show()<br>
 
 <br>
 from PIL import Image<br>
-import matplotlib.pyplot as plt<br>
-  
+import matplotlib.pyplot as plt<br> 
 # Create an image as input:<br>
 input_image = Image.new(mode="RGB", size=(400, 400),<br>
                         color="blue")<br>
-  
 # save the image as "input.png"<br>
 #(not mandatory)<br>
-#input_image.save("input", format="png")<br>
-  
+#input_image.save("input", format="png")<br>  
 # Extracting pixel map:<br>
-pixel_map = input_image.load()<br>
-  
+pixel_map = input_image.load()<br>  
 # Extracting the width and height<br>
 # of the image:<br>
 width, height = input_image.size<br>
@@ -651,15 +647,12 @@ for i in range(width):<br>
         else:<br>  
             # RGB value of light salmon.<br>
             pixel_map[i, j] = (255, 160, 0)<br>
-  
 # The following loop will create a cross<br>
 # of color blue.<br>
 for i in range(width):<br>
-    
     # RGB value of Blue.<br>
     pixel_map[i, i] = (0, 0, 255)<br>
-    pixel_map[i, width-i-1] = (0, 0, 255)<br>
-  
+    pixel_map[i, width-i-1] = (0, 0, 255)<br> 
 # Saving the final output<br>
 # as "output.png":<br>
 #input_image.save("output", format="png")<br>
@@ -681,7 +674,7 @@ data[200:300, 200:300] = [0, 255, 0]<br>
 data[300:400, 300:400] = [130, 255, 0]<br>
 data[400:500, 400:500] = [0, 255, 170]<br>
 data[500:600, 500:600] = [180, 255, 0]<br>
-# red patch in upper left<br>
+**# red patch in upper left**<br>
 img = Image.fromarray(data, 'RGB')<br>
 img.save('my.png')<br>
 plt.imshow(img)<br>
@@ -695,7 +688,6 @@ img=image.imread('puppy2.jpg')<br>
 print('The Shape of the image is:',img.shape)<br>
 print('The image as array is:')<br>
 print(img)<br>
-
 ![image](https://user-images.githubusercontent.com/97970956/180202646-2e5a517d-a319-41fb-8769-158724cc637d.png)<br>
 ![image](https://user-images.githubusercontent.com/97970956/180202680-1f605cf5-33cc-4374-8536-82ca1336a098.png)<br>
 <br>
