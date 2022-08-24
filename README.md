@@ -641,18 +641,14 @@ width, height = input_image.size<br>
 z = 100<br>
 for i in range(width):<br>
     for j in range(height):<br>
-        <br>
         # the following if part will create<br>
         # a square with color orange<br>
         if((i >= z and i <= width-z) and (j >= z and j <= height-z)):<br>
-            
-            # RGB value of orange.<br>
+              # RGB value of orange.<br>
             pixel_map[i, j] = (255, 165, 255)<br>
-  
         # the following else part will fill the<br>
         # rest part with color light salmon.<br>
-        else:<br>
-            
+        else:<br>  
             # RGB value of light salmon.<br>
             pixel_map[i, j] = (255, 160, 0)<br>
   
@@ -769,11 +765,9 @@ print(stat.stddev)<br>
 # the rectangular pattern<br>
 # Function to print the pattern<br>
 def printPattern(n):<br>
- 
     arraySize = n * 2 - 1;<br>
     result = [[0 for x in range(arraySize)]<br>
-                 for y in range(arraySize)];<br>
-         
+                 for y in range(arraySize)];<br>  
     # Fill the values<br>
     for i in range(arraySize):<br>
         for j in range(arraySize):<br>
@@ -781,19 +775,15 @@ def printPattern(n):<br>
                abs(j - (arraySize // 2))):<br>
                 result[i][j] = abs(i - (arraySize // 2));<br>
             else:<br>
-                result[i][j] = abs(j - (arraySize // 2));<br>
-             
+                result[i][j] = abs(j - (arraySize // 2));<br>     
     # Print the array<br>
     for i in range(arraySize):<br>
         for j in range(arraySize):<br>
             print(result[i][j], end = " ");<br>
         print("");<br>
- 
 # Driver Code<br>
 n = 4;<br>
- 
 printPattern(n);<br>
-
 ![image](https://user-images.githubusercontent.com/97970956/181233899-5ebaf44f-8f12-448b-b499-652e1ff6cdf8.png)
 
 
