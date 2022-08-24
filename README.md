@@ -797,51 +797,7 @@ printPattern(n);<br>
 ![image](https://user-images.githubusercontent.com/97970956/181233899-5ebaf44f-8f12-448b-b499-652e1ff6cdf8.png)
 
 
-#minimum<br>
-import imageio<br>
-import numpy as np<br>
-import matplotlib.pyplot as plt<br>
-img=imageio.imread('rabbit.jpg' )<br>
-plt.imshow(img)<br>
-plt.show()<br>
-min_channels = np.amin([np.min(img[:,:,0]), np.amin(img[:,:,1]),np.amin(img[:,:,2])])<br>
-
-print(min_channels)<br>
-![image](https://user-images.githubusercontent.com/97970956/186389190-4b6f3e56-4f3d-464b-83e3-133db34667b0.png)<br>
-#maximum<br>
-import imageio<br>
-import numpy as np<br>
-import matplotlib.pyplot as plt<br>
-img=imageio.imread('rabbit.jpg' )<br>
-plt.imshow(img)<br>
-plt.show()<br>
-max_channels = np.amax([np.amax(img[:,:,0]), np.amax(img[:,:,1]),np.amax(img[:,:,2])])<br>
-
-print(max_channels)<br>
-![image](https://user-images.githubusercontent.com/97970956/186389365-dff4bba9-5b5f-4cb5-8c00-75537c19ee3c.png)<br>
-
-
-
-import imageio<br>
-import matplotlib.pyplot as plt<br>
-img=imageio.imread("rabbit.jpg")<br>
-plt.imshow(img)<br>
-np.average(img)<br>
-
-![image](https://user-images.githubusercontent.com/97970956/186389510-736f8eea-63d8-4637-8942-10fb1e6ea423.png)<br>
-
-#standard deviation<br>
-from PIL import Image,ImageStat<br>
-import matplotlib.pyplot as plt<br>
-im=Image.open('rabbit.jpg')<br>
-plt.imshow(im)<br>
-plt.show()
-stat=ImageStat.Stat(im)<br>
-print(stat.stddev)<br>
-![image](https://user-images.githubusercontent.com/97970956/186389669-1d87c6b8-5bb4-4a0e-adf7-89d327976174.png)<br>
-
-
-Edge Detection Using OpenCV<br>
+**#Edge Detection Using OpenCV**<br>
 import cv2
 2
  
