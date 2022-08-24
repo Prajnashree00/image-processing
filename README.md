@@ -797,48 +797,48 @@ printPattern(n);<br>
 ![image](https://user-images.githubusercontent.com/97970956/181233899-5ebaf44f-8f12-448b-b499-652e1ff6cdf8.png)
 
 
-#minimum
-import imageio
-import numpy as np
-import matplotlib.pyplot as plt
-img=imageio.imread('rabbit.jpg' )
-plt.imshow(img)
+#minimum<br>
+import imageio<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+img=imageio.imread('rabbit.jpg' )<br>
+plt.imshow(img)<br>
+plt.show()<br>
+min_channels = np.amin([np.min(img[:,:,0]), np.amin(img[:,:,1]),np.amin(img[:,:,2])])<br>
+
+print(min_channels)<br>
+![image](https://user-images.githubusercontent.com/97970956/186389190-4b6f3e56-4f3d-464b-83e3-133db34667b0.png)<br>
+#maximum<br>
+import imageio<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+img=imageio.imread('rabbit.jpg' )<br>
+plt.imshow(img)<br>
+plt.show()<br>
+max_channels = np.amax([np.amax(img[:,:,0]), np.amax(img[:,:,1]),np.amax(img[:,:,2])])<br>
+
+print(max_channels)<br>
+![image](https://user-images.githubusercontent.com/97970956/186389365-dff4bba9-5b5f-4cb5-8c00-75537c19ee3c.png)<br>
+
+
+
+import imageio<br>
+import matplotlib.pyplot as plt<br>
+img=imageio.imread("rabbit.jpg")<br>
+plt.imshow(img)<br>
+np.average(img)<br>
+
+![image](https://user-images.githubusercontent.com/97970956/186389510-736f8eea-63d8-4637-8942-10fb1e6ea423.png)<br>
+
+#standard deviation<br>
+from PIL import Image,ImageStat<br>
+import matplotlib.pyplot as plt<br>
+im=Image.open('rabbit.jpg')<br>
+plt.imshow(im)<br>
 plt.show()
-min_channels = np.amin([np.min(img[:,:,0]), np.amin(img[:,:,1]),np.amin(img[:,:,2])])
-
-print(min_channels)
-![image](https://user-images.githubusercontent.com/97970956/186389190-4b6f3e56-4f3d-464b-83e3-133db34667b0.png)
-#maximum
-import imageio
-import numpy as np
-import matplotlib.pyplot as plt
-img=imageio.imread('rabbit.jpg' )
-plt.imshow(img)
-plt.show()
-max_channels = np.amax([np.amax(img[:,:,0]), np.amax(img[:,:,1]),np.amax(img[:,:,2])])
-
-print(max_channels)
-![image](https://user-images.githubusercontent.com/97970956/186389365-dff4bba9-5b5f-4cb5-8c00-75537c19ee3c.png)
-
-
-
-import imageio
-import matplotlib.pyplot as plt
-img=imageio.imread("rabbit.jpg")
-plt.imshow(img)
-np.average(img)
-
-![image](https://user-images.githubusercontent.com/97970956/186389510-736f8eea-63d8-4637-8942-10fb1e6ea423.png)
-
-#standard deviation
-from PIL import Image,ImageStat
-import matplotlib.pyplot as plt
-im=Image.open('rabbit.jpg')
-plt.imshow(im)
-plt.show()
-stat=ImageStat.Stat(im)
-print(stat.stddev)
-![image](https://user-images.githubusercontent.com/97970956/186389669-1d87c6b8-5bb4-4a0e-adf7-89d327976174.png)
+stat=ImageStat.Stat(im)<br>
+print(stat.stddev)<br>
+![image](https://user-images.githubusercontent.com/97970956/186389669-1d87c6b8-5bb4-4a0e-adf7-89d327976174.png)<br>
 
 
 
