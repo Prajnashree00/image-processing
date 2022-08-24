@@ -911,4 +911,30 @@ cv2.destroyAllWindows()
 ![image](https://user-images.githubusercontent.com/97970956/186399388-c900a50f-af2f-4c73-8d30-b30b239a6a01.png)
 ![image](https://user-images.githubusercontent.com/97970956/186399454-b9a4dce8-5c5d-4b29-bd8b-614fb9cd0cd9.png)
 
-
+# Sobel Edge Detection
+2
+sobelx = cv2.Sobel(src=img_blur, ddepth=cv2.CV_64F, dx=1, dy=0, ksize=5) # Sobel Edge Detection on the X axis
+3
+sobely = cv2.Sobel(src=img_blur, ddepth=cv2.CV_64F, dx=0, dy=1, ksize=5) # Sobel Edge Detection on the Y axis
+4
+sobelxy = cv2.Sobel(src=img_blur, ddepth=cv2.CV_64F, dx=1, dy=1, ksize=5) # Combined X and Y Sobel Edge Detection
+5
+ 
+6
+# Display Sobel Edge Detection Images
+7
+cv2.imshow('Sobel X', sobelx)
+8
+cv2.waitKey(0)
+9
+ 
+10
+cv2.imshow('Sobel Y', sobely)
+11
+cv2.waitKey(0)
+12
+ 
+13
+cv2.imshow('Sobel X Y using Sobel() function', sobelxy)
+14
+cv2.waitKey(0)
