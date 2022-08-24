@@ -116,7 +116,7 @@ cv2.destroyAllWindows()<br>
 from skimage import io<br>
 import matplotlib.pyplot as plt<br>
 url='https://i.natgeofe.com/n/3861de2a-04e6-45fd-aec8-02e7809f9d4e/02-cat-training-NationalGeographic_1484324_3x2.jpg'<br>
-image=io.imread(url)
+image=io.imread(url)<br>
 plt.imshow(image)<br>
 plt.show()<br>
 <br>
