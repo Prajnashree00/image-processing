@@ -876,3 +876,7 @@ cv2.waitKey(0)
 cv2.imshow('Sobel X Y using Sobel() function', sobelxy)
 14
 cv2.waitKey(0)
+
+1.basic pillow function
+
+
