@@ -912,5 +912,50 @@ print('image size:',image.size,
      '\ncolour mode:',image.mode,
      '\nimage width',image.width,'|also represented by:',image.size[0],
      '\nimage height',image.height,'|also represented by:',image.size[1], )
+output:
+![image](https://user-images.githubusercontent.com/97970956/187897219-99157562-4e3c-467b-b8d4-f7ac38c74817.png)
+
+#mapping the pixels of the image so we can use them as coordinates
+pixel=greyscale.load()
+
+#a nested Loop to parse through all the pixels in the image
+for row in range(greyscale.size[0]):
+    for column in range(greyscale.size[1]):
+        if pixel[row,column]!=(255):
+         pixel[row,column]=(0)
+            
+greyscale
+![image](https://user-images.githubusercontent.com/97970956/187897300-465407a3-009c-4c07-809b-f7a36f68e774.png)
+
+#1,invert image
+invert=ImageChops.invert(greyscale)
+
+#2.invert by subtraction
+bg=Image.new('L',(256,256),color=(255))#create a new image with a solid background 
+subt=ImageChops.subtract(bg,greyscale)#subtract image from background 
+
+#rotate
+rotate=subt.rotate(45)
+rotate
+
+![image](https://user-images.githubusercontent.com/97970956/187897352-7bbe8ce7-6288-4eb8-bc84-44e062ff0c72.png)
+
+#gaussian blur
+blur=greyscale.filter(ImageFilter.GaussianBlur(radius=1))
+
+#edge detection
+edge=blur.filter(ImageFilter.FIND_EDGES)
+edge
+![image](https://user-images.githubusercontent.com/97970956/187897401-70f7c81a-ffe7-48cd-b9d0-6661ad6d3de3.png)
+
+#change the colours
+edge=edge.convert('RGB')
+bg_red=Image.new('RGB',(256,256),color=(255,0,0))
+
+filled_edge=ImageChops.darker(bg_red,edge)
+filled_edge
+
+![image](https://user-images.githubusercontent.com/97970956/187897464-c2ad789d-dd36-49bd-a950-427c95e683d0.png)
+
 
 
