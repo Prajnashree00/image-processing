@@ -794,7 +794,7 @@ cv2.imshow('Original', img)
 7
 cv2.waitKey(0)
 8
- 
+ <br>
 9
 # Convert to graycsale
 10
@@ -877,389 +877,389 @@ cv2.imshow('Sobel X Y using Sobel() function', sobelxy)
 14
 cv2.waitKey(0)
 
-1.basic pillow function
-ImageProcessingPILLOW
-A few basic PILLOW functions to help with image processing
-1. Importing PILLOW / PIL
-2. Loading an image
-3. Basic Image attributes
-4. Merge / Multiply 2 images
-5. Add 2 images
-6. Convert Colour Mode
-7. Map pixels and customize the image manually
-8. Invert
-9. Create a new image with code
-10. Invert by subtraction
-11. Rotate 45 degrees
-12. Gaussian Blur
-13. Edge Detection with
-14. Change the colour of the edge
-15. Saving the image
-from PIL import Image,ImageChops,ImageFilter 
-from matplotlib import pyplot as plt
+1.basic pillow function<br>
+ImageProcessingPILLOW<br>
+A few basic PILLOW functions to help with image processing<br>
+1. Importing PILLOW / PIL<br>
+2. Loading an image<br>
+3. Basic Image attributes<br>
+4. Merge / Multiply 2 images<br>
+5. Add 2 images<br>
+6. Convert Colour Mode<br>
+7. Map pixels and customize the image manually<br>
+8. Invert<br>
+9. Create a new image with code<br>
+10. Invert by subtraction<br>
+11. Rotate 45 degrees<br>
+12. Gaussian Blur<br>
+13. Edge Detection with<br>
+14. Change the colour of the edge<br>
+15. Saving the image<br>
+from PIL import Image,ImageChops,ImageFilter <br>
+from matplotlib import pyplot as plt<br>
 
-#Create a PIL Image objects
-x=Image.open("x.png")
-o=Image.open("o.png")
+#Create a PIL Image objects<br>
+x=Image.open("x.png")<br>
+o=Image.open("o.png")<br>
 
-#Find out the attributes of the Image Objects
-print('size of the image:',x.size,'colour mode:',x.mode)
-print('size of the iamge:',o.size,'colour mode:',o.mode)
+#Find out the attributes of the Image Objects<br>
+print('size of the image:',x.size,'colour mode:',x.mode)<br>
+print('size of the iamge:',o.size,'colour mode:',o.mode)<br>
 
-#plot 2 images one besides the other 
-plt.subplot(121),plt.imshow(x)
-plt.axis('off')
-plt.subplot(122),plt.imshow(o)
-plt.axis('off')
+#plot 2 images one besides the other <br>
+plt.subplot(121),plt.imshow(x)<br>
+plt.axis('off')<br>
+plt.subplot(122),plt.imshow(o)<br>
+plt.axis('off')<br>
 
-#multiply images
-merged=ImageChops.multiply(x,o)
+#multiply images<br>
+merged=ImageChops.multiply(x,o)<br>
 
-#adding 2 images
-add=ImageChops.add(x,o)
+#adding 2 images<br>
+add=ImageChops.add(x,o)<br>
 
-#convert colour mode
-greyscale=merged.convert('L')
-greyscale
-![image](https://user-images.githubusercontent.com/97970956/187896129-0451d422-e545-453c-a116-17310245ef37.png)
-#More attributes
-image=merged
+#convert colour mode<br>
+greyscale=merged.convert('L')<br>
+greyscale<br>
+![image](https://user-images.githubusercontent.com/97970956/187896129-0451d422-e545-453c-a116-17310245ef37.png)<br>
+#More attributes<br>
+image=merged<br>
 
-print('image size:',image.size,
-     '\ncolour mode:',image.mode,
-     '\nimage width',image.width,'|also represented by:',image.size[0],
-     '\nimage height',image.height,'|also represented by:',image.size[1], )
-output:
-![image](https://user-images.githubusercontent.com/97970956/187897219-99157562-4e3c-467b-b8d4-f7ac38c74817.png)
+print('image size:',image.size,<br>
+     '\ncolour mode:',image.mode,<br>
+     '\nimage width',image.width,'|also represented by:',image.size[0],<br>
+     '\nimage height',image.height,'|also represented by:',image.size[1], )<br>
+output:<br>
+![image](https://user-images.githubusercontent.com/97970956/187897219-99157562-4e3c-467b-b8d4-f7ac38c74817.png)<br>
 
-#mapping the pixels of the image so we can use them as coordinates
-pixel=greyscale.load()
+#mapping the pixels of the image so we can use them as coordinates<br>
+pixel=greyscale.load()<br>
 
-#a nested Loop to parse through all the pixels in the image
-for row in range(greyscale.size[0]):
-    for column in range(greyscale.size[1]):
-        if pixel[row,column]!=(255):
-         pixel[row,column]=(0)
+#a nested Loop to parse through all the pixels in the image<br>
+for row in range(greyscale.size[0]):<br>
+    for column in range(greyscale.size[1]):<br>
+        if pixel[row,column]!=(255):<br>
+         pixel[row,column]=(0)<br>
             
-greyscale
-![image](https://user-images.githubusercontent.com/97970956/187897300-465407a3-009c-4c07-809b-f7a36f68e774.png)
+greyscale<br>
+![image](https://user-images.githubusercontent.com/97970956/187897300-465407a3-009c-4c07-809b-f7a36f68e774.png)<br>
 
-#1,invert image
-invert=ImageChops.invert(greyscale)
+#1,invert image<br>
+invert=ImageChops.invert(greyscale)<br>
 
-#2.invert by subtraction
-bg=Image.new('L',(256,256),color=(255))#create a new image with a solid background 
-subt=ImageChops.subtract(bg,greyscale)#subtract image from background 
+#2.invert by subtraction<br>
+bg=Image.new('L',(256,256),color=(255))#create a new image with a solid background <br>
+subt=ImageChops.subtract(bg,greyscale)#subtract image from background <br>
 
-#rotate
-rotate=subt.rotate(45)
-rotate
+#rotate<br>
+rotate=subt.rotate(45)<br>
+rotate<br>
 
-![image](https://user-images.githubusercontent.com/97970956/187897352-7bbe8ce7-6288-4eb8-bc84-44e062ff0c72.png)
+![image](https://user-images.githubusercontent.com/97970956/187897352-7bbe8ce7-6288-4eb8-bc84-44e062ff0c72.png)<br>
 
-#gaussian blur
-blur=greyscale.filter(ImageFilter.GaussianBlur(radius=1))
+#gaussian blur<br>
+blur=greyscale.filter(ImageFilter.GaussianBlur(radius=1))<br>
 
-#edge detection
-edge=blur.filter(ImageFilter.FIND_EDGES)
-edge
-![image](https://user-images.githubusercontent.com/97970956/187897401-70f7c81a-ffe7-48cd-b9d0-6661ad6d3de3.png)
+#edge detection<br>
+edge=blur.filter(ImageFilter.FIND_EDGES)<br>
+edge<br>
+![image](https://user-images.githubusercontent.com/97970956/187897401-70f7c81a-ffe7-48cd-b9d0-6661ad6d3de3.png)<br>
 
-#change the colours
-edge=edge.convert('RGB')
-bg_red=Image.new('RGB',(256,256),color=(255,0,0))
+#change the colours<br>
+edge=edge.convert('RGB')<br>
+bg_red=Image.new('RGB',(256,256),color=(255,0,0))<br>
 
-filled_edge=ImageChops.darker(bg_red,edge)
-filled_edge
+filled_edge=ImageChops.darker(bg_red,edge)<br>
+filled_edge<br>
 
-![image](https://user-images.githubusercontent.com/97970956/187897464-c2ad789d-dd36-49bd-a950-427c95e683d0.png)
+![image](https://user-images.githubusercontent.com/97970956/187897464-c2ad789d-dd36-49bd-a950-427c95e683d0.png)<br>
 
-(1) Image restoration:
-(a) Restore a damaged image
-import numpy as np
+(1) Image restoration:<br>
+(a) Restore a damaged image<br>
+import numpy as np<br>
 import cv2
-import matplotlib.pyplot as plt
-#open the image
-img=cv2.imread('dimage_damaged.png')
-plt.imshow(img)
-plt.show()
-#load the mask
-mask=cv2.imread('dimage_mask.png',0)
-plt.imshow(mask)
-plt.show()
-#Inpaint
-dst=cv2.inpaint(img,mask,3,cv2.INPAINT_TELEA)
+import matplotlib.pyplot as plt<br>
+#open the image<br>
+img=cv2.imread('dimage_damaged.png')<br>
+plt.imshow(img)<br>
+plt.show()<br>
+#load the mask<br>
+mask=cv2.imread('dimage_mask.png',0)<br>
+plt.imshow(mask)<br>
+plt.show()<br>
+#Inpaint<br>
+dst=cv2.inpaint(img,mask,3,cv2.INPAINT_TELEA)<br>
 
-#Write the output
-cv2.imwrite('dimage_impainted.png',dst)
-plt.imshow(dst)
-plt.show()
-![image](https://user-images.githubusercontent.com/97970956/187898174-56b29afe-5b35-4e1e-9059-f91fda056631.png)
-![image](https://user-images.githubusercontent.com/97970956/187898298-981cd03c-3b34-4061-a41c-e9db34e18fbb.png)
+#Write the output<br>
+cv2.imwrite('dimage_impainted.png',dst)<br>
+plt.imshow(dst)<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97970956/187898174-56b29afe-5b35-4e1e-9059-f91fda056631.png)<br>
+![image](https://user-images.githubusercontent.com/97970956/187898298-981cd03c-3b34-4061-a41c-e9db34e18fbb.png)<br>
 
-(b) Removing Logo’s:
-import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd 
-from skimage.restoration import inpaint
-from skimage.transform import resize 
-from skimage import color
+(b) Removing Logo’s:<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+import pandas as pd <br>
+from skimage.restoration import inpaint<br>
+from skimage.transform import resize<br> 
+from skimage import color<br>
 
-plt.rcParams['figure.figsize']=(10,8)
-def show_image(image,title='Image',cmap_type='gray'):
-    plt.imshow(image,cmap=camp_type)
-    plt.title(title)
-    plit.axis('off')
+plt.rcParams['figure.figsize']=(10,8)<br>
+def show_image(image,title='Image',cmap_type='gray'):<br>
+    plt.imshow(image,cmap=camp_type)<br>
+    plt.title(title)<br>
+    plit.axis('off')<br>
     
-def plot_comparison(img_original,img_filtered,img_title_filtered):
-    fig,(ax1,ax2)=plt.subplots(ncols=2,figsize=(10,8),sharex=True,sharey=True)
-    ax1.imshow(img_original,cmap=plt.cm.gray)
-    ax1.set_title('Original')
-    ax1.axis('off')
-    ax2.imshow(img_filtered,cmap=plt.cm.gray)
-    ax2.set_title(img_title_filtered)
-    ax2.axis('off')
-image_with_logo=plt.imread('imlogo.png')
+def plot_comparison(img_original,img_filtered,img_title_filtered):<br>
+    fig,(ax1,ax2)=plt.subplots(ncols=2,figsize=(10,8),sharex=True,sharey=True)<br>
+    ax1.imshow(img_original,cmap=plt.cm.gray)<br>
+    ax1.set_title('Original')<br>
+    ax1.axis('off')<br>
+    ax2.imshow(img_filtered,cmap=plt.cm.gray)<br>
+    ax2.set_title(img_title_filtered)<br>
+    ax2.axis('off')<br>
+image_with_logo=plt.imread('imlogo.png')<br>
 
-#Initialize the mask
-mask=np.zeros(image_with_logo.shape[:-1])
+#Initialize the mask<br>
+mask=np.zeros(image_with_logo.shape[:-1])<br>
 
-#set the pixel where the logo is to 1
-mask[210:272,360:425]=1
+#set the pixel where the logo is to 1<br>
+mask[210:272,360:425]=1<br>
 
-#apply inpainting to remove the logo
-image_logo_removed=inpaint.inpaint_biharmonic(image_with_logo,mask,multichannel=True)
+#apply inpainting to remove the logo<br>
+image_logo_removed=inpaint.inpaint_biharmonic(image_with_logo,mask,multichannel=True)<br>
 
 
-#show the original and the logo removed the images
-plot_comparison(image_with_logo,image_logo_removed,'Image with logo removed')
+#show the original and the logo removed the images<br>
+plot_comparison(image_with_logo,image_logo_removed,'Image with logo removed')<br>
 
-![image](https://user-images.githubusercontent.com/97970956/187898955-b0ff7b83-0e06-439c-8f9d-44d1c8064d65.png)
+![image](https://user-images.githubusercontent.com/97970956/187898955-b0ff7b83-0e06-439c-8f9d-44d1c8064d65.png)<br>
 
-(2) Noise:
-(a) Adding noise
-from skimage.util import random_noise
+(2) Noise:<br>
+(a) Adding noise<br>
+from skimage.util import random_noise<br>
 
-fruit_image= plt.imread('fruitts.jpeg')
+fruit_image= plt.imread('fruitts.jpeg')<br>
 
-#Add noise to the image
-noisy_image = random_noise (fruit_image)
+#Add noise to the image<br>
+noisy_image = random_noise (fruit_image)<br>
 
-#Show th original and resulting image 
-plot_comparison (fruit_image, noisy_image, 'Noisy image')
+#Show th original and resulting image <br>
+plot_comparison (fruit_image, noisy_image, 'Noisy image')<br>
 
-![image](https://user-images.githubusercontent.com/97970956/187899065-5c4e7075-30cb-4c55-91d2-11b81ab9ebb1.png)
-(b) Reducing Noise
-from skimage.restoration import denoise_tv_chambolle
+![image](https://user-images.githubusercontent.com/97970956/187899065-5c4e7075-30cb-4c55-91d2-11b81ab9ebb1.png)<br>
+(b) Reducing Noise<br>
+from skimage.restoration import denoise_tv_chambolle<br>
 
-noisy_image = plt.imread('noisy.jpg')
+noisy_image = plt.imread('noisy.jpg')<br>
+<br>
+# Apply total variation filter denoising <br>
+denoised_image = denoise_tv_chambolle (noisy_image, multichannel=True)<br>
+<br>
+#Show the noisy and denoised image<br>
+plot_comparison (noisy_image, denoised_image, 'Denoised Image')<br>
 
-# Apply total variation filter denoising 
-denoised_image = denoise_tv_chambolle (noisy_image, multichannel=True)
+![image](https://user-images.githubusercontent.com/97970956/187899176-db35280f-9328-4631-a9b9-8de0fc9943f0.png)<br>
 
-#Show the noisy and denoised image
-plot_comparison (noisy_image, denoised_image, 'Denoised Image')
+(c) Reducing Noise while preserving edges<br>
+from skimage.restoration import denoise_bilateral<br>
+landscape_image = plt.imread('noisy.jpg')<br>
+#Apply bilateral filter denoising<br>
+denoised_image = denoise_bilateral (landscape_image, multichannel=True)<br>
+#Show original and resulting images<br>
+plot_comparison (landscape_image, denoised_image, 'Denoised Image')<br>
+![image](https://user-images.githubusercontent.com/97970956/187899409-61abfeaa-c28c-4272-906c-212f40572bd9.png)<br>
 
-![image](https://user-images.githubusercontent.com/97970956/187899176-db35280f-9328-4631-a9b9-8de0fc9943f0.png)
+(3) Segmentation :<br>
+(a) Superpixel Segmentation<br>
+from skimage.segmentation import slic<br>
+from skimage.color import label2rgb<br>
+import matplotlib.pyplot as plt<br>
+import numpy as np<br>
+face_image = plt.imread('face.jpg')<br>
+segments = slic(face_image, n_segments=400)<br>
+segmented_image=label2rgb(segments,face_image,kind='avg')<br>
+plt.imshow(face_image)<br>
+plt.show()<br>
+plt.imshow((segmented_image * 1).astype(np.uint8))<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97970956/187899532-f77de7e8-d007-4f10-9466-ee7c96751435.png)<br>
+![image](https://user-images.githubusercontent.com/97970956/187899558-6e2ea4e5-9853-4cd2-ba87-d047d5133669.png)<br>
 
-(c) Reducing Noise while preserving edges
-from skimage.restoration import denoise_bilateral
-landscape_image = plt.imread('noisy.jpg')
-#Apply bilateral filter denoising
-denoised_image = denoise_bilateral (landscape_image, multichannel=True)
-#Show original and resulting images
-plot_comparison (landscape_image, denoised_image, 'Denoised Image')
-![image](https://user-images.githubusercontent.com/97970956/187899409-61abfeaa-c28c-4272-906c-212f40572bd9.png)
+(4) Contours:<br>
+(a) Contouring shapes<br>
 
-(3) Segmentation :
-(a) Superpixel Segmentation
-from skimage.segmentation import slic
-from skimage.color import label2rgb
-import matplotlib.pyplot as plt
-import numpy as np
-face_image = plt.imread('face.jpg')
-segments = slic(face_image, n_segments=400)
-segmented_image=label2rgb(segments,face_image,kind='avg')
-plt.imshow(face_image)
-plt.show()
-plt.imshow((segmented_image * 1).astype(np.uint8))
-plt.show()
-![image](https://user-images.githubusercontent.com/97970956/187899532-f77de7e8-d007-4f10-9466-ee7c96751435.png)
-![image](https://user-images.githubusercontent.com/97970956/187899558-6e2ea4e5-9853-4cd2-ba87-d047d5133669.png)
-
-(4) Contours:
-(a) Contouring shapes
-
-def show_image_contour(image,contours):
-    plt.figure()
-    for n,contour in enumerate(contours):
-        plt.plot(contour[:,1],contour[:,0],linewidth=3)
-    plt.imshow(image,interpolation='nearest',cmap='gray_r')
-    plt.title('contours')
-    plt.axis('off')
+def show_image_contour(image,contours):<br>
+    plt.figure()<br>
+    for n,contour in enumerate(contours):<br>
+        plt.plot(contour[:,1],contour[:,0],linewidth=3)<br>
+    plt.imshow(image,interpolation='nearest',cmap='gray_r')<br>
+    plt.title('contours')<br>
+    plt.axis('off')<br>
     
-from skimage import measure, data
-#obtain the horse image 
-horse_image = data.horse()
- #Find the contours with a constant Level value of 0.8
-contours = measure.find_contours (horse_image, level=0.8)
-# Shows the image with contours found 
-show_image_contour(horse_image, contours)
-   ![image](https://user-images.githubusercontent.com/97970956/187899785-bcd9a65e-488b-4b05-98c2-42d1f68b99bc.png)
+from skimage import measure, data<br>
+#obtain the horse image <br>
+horse_image = data.horse()<br>
+ #Find the contours with a constant Level value of 0.8<br>
+contours = measure.find_contours (horse_image, level=0.8)<br>
+# Shows the image with contours found <br>
+show_image_contour(horse_image, contours)<br>
+   ![image](https://user-images.githubusercontent.com/97970956/187899785-bcd9a65e-488b-4b05-98c2-42d1f68b99bc.png)<br>
 
 
-(b) Find contours of an image that is not binary
-from skimage.io import imread 
-from skimage.filters import threshold_otsu
+(b) Find contours of an image that is not binary<br>
+from skimage.io import imread <br>
+from skimage.filters import threshold_otsu<br>
 
-image_dices = imread('diceimg.png')
+image_dices = imread('diceimg.png')<br>
 
-# Make the image grayscale
-image_dices = color.rgb2gray(image_dices)
+# Make the image grayscale<br>
+image_dices = color.rgb2gray(image_dices)<br>
 
-#Obtain the optimal thresh value 
-thresh = threshold_otsu(image_dices)
+#Obtain the optimal thresh value <br>
+thresh = threshold_otsu(image_dices)<br>
 
-# Apply thresholding
-binary=image_dices > thresh
+# Apply thresholding<br>
+binary=image_dices > thresh<br>
 
-# Find contours at a constant value of 0.8
-contours = measure.find_contours (binary, level=0.8)
+# Find contours at a constant value of 0.8<br>
+contours = measure.find_contours (binary, level=0.8)<br>
 
-# Show the image
-show_image_contour (image_dices, contours)
+# Show the image<br>
+show_image_contour (image_dices, contours)<br>
 
-![image](https://user-images.githubusercontent.com/97970956/187899858-a90587ac-6c2c-42d7-bdf7-7427f0bc3a71.png)
+![image](https://user-images.githubusercontent.com/97970956/187899858-a90587ac-6c2c-42d7-bdf7-7427f0bc3a71.png)<br>
 
-(c) Count the dots in a dice's image
-# Create List with the shape of each contour 
-shape_contours = [cnt.shape[0] for cnt in contours]
+(c) Count the dots in a dice's image<br>
+# Create List with the shape of each contour <br>
+shape_contours = [cnt.shape[0] for cnt in contours]<br>
 
-#Set 50 as the maximum size of the dots shape 
-max_dots_shape = 50
+#Set 50 as the maximum size of the dots shape <br>
+max_dots_shape = 50<br>
 
-#Count dots in contours excluding bigger than dots size 
-dots_contours = [cnt for cnt in contours if np.shape(cnt) [0] < max_dots_shape]
+#Count dots in contours excluding bigger than dots size <br>
+dots_contours = [cnt for cnt in contours if np.shape(cnt) [0] < max_dots_shape]<br>
+<br>
+#Shows all contours found <br>
+show_image_contour (binary, contours)<br>
 
-#Shows all contours found 
-show_image_contour (binary, contours)
-
-#Print the dice's number
+#Print the dice's number<br>
 print('Dices dots number: {}.'.format(len (dots_contours)))
-![image](https://user-images.githubusercontent.com/97970956/187899936-377fc88d-0af5-4030-bfe4-0910e80fd29b.png)
+![image](https://user-images.githubusercontent.com/97970956/187899936-377fc88d-0af5-4030-bfe4-0910e80fd29b.png)<br>
 
 
-Implement a program to perform various edge detection techniques
-a) Canny Edge detection
-#Canny Edge detection
-import cv2
-import numpy as np 
-import matplotlib.pyplot as plt
-plt.style.use('seaborn')
+Implement a program to perform various edge detection techniques<br>
+a) Canny Edge detection<br>
+#Canny Edge detection<br>
+import cv2<br>
+import numpy as np <br>
+import matplotlib.pyplot as plt<br>
+plt.style.use('seaborn')<br>
 
-loaded_image = cv2.imread("animate.jpeg")
-loaded_image = cv2.cvtColor(loaded_image,cv2.COLOR_BGR2RGB)
+loaded_image = cv2.imread("animate.jpeg")<br>
+loaded_image = cv2.cvtColor(loaded_image,cv2.COLOR_BGR2RGB)<br>
 
-gray_image = cv2.cvtColor(loaded_image,cv2.COLOR_BGR2GRAY)
+gray_image = cv2.cvtColor(loaded_image,cv2.COLOR_BGR2GRAY)<br>
 
-edged_image = cv2.Canny(gray_image, threshold1=30, threshold2=100)
+edged_image = cv2.Canny(gray_image, threshold1=30, threshold2=100)<br>
 
-plt.figure(figsize=(20,20))
-plt.subplot(1,3,1)
-plt.imshow(loaded_image, cmap="gray")
-plt.title("original Image")
-plt.axis("off")
-plt.subplot(1,3,2)
-plt.imshow(gray_image,cmap="gray")
-plt.axis("off")
-plt.title("GrayScale Image")
-plt.subplot(1,3,3)
-plt.imshow(edged_image,cmap="gray")
-plt.axis("off")
-plt.title("Canny Edge Detected Image")
-plt.show()
-![image](https://user-images.githubusercontent.com/97970956/187902232-5c433f5a-0f31-48e9-b933-8c61da69798e.png)
+plt.figure(figsize=(20,20))<br>
+plt.subplot(1,3,1)<br>
+plt.imshow(loaded_image, cmap="gray")<br>
+plt.title("original Image")<br>
+plt.axis("off")<br>
+plt.subplot(1,3,2)<br>
+plt.imshow(gray_image,cmap="gray")<br>
+plt.axis("off")<br>
+plt.title("GrayScale Image")<br>
+plt.subplot(1,3,3)<br>
+plt.imshow(edged_image,cmap="gray")<br>
+plt.axis("off")<br>
+plt.title("Canny Edge Detected Image")<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97970956/187902232-5c433f5a-0f31-48e9-b933-8c61da69798e.png)<br>
 
-b) Edge detection schemes - the gradient (Sobel - first order derivatives)
-based edge detector and the Laplacian (2nd order derivative, so it is
-extremely sensitive to noise) based edge detector.
-#Laplacian and Sobel Edge detecting methods
-import cv2
-import numpy as np
-from matplotlib import pyplot as plt
+b) Edge detection schemes - the gradient (Sobel - first order derivatives)<br>
+based edge detector and the Laplacian (2nd order derivative, so it is<br>
+extremely sensitive to noise) based edge detector.<br>
+#Laplacian and Sobel Edge detecting methods<br>
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
 
-#Loading image
-#imge = cv2.imread('SanFrancisco.jpg',) 
-img0= cv2.imread('animate.jpeg',)
+#Loading image<br>
+#imge = cv2.imread('SanFrancisco.jpg',) <br>
+img0= cv2.imread('animate.jpeg',)<br>
                  
-#converting to gray scale
-gray = cv2.cvtColor(img0, cv2.COLOR_BGR2GRAY)
-                 
+#converting to gray scale<br>
+gray = cv2.cvtColor(img0, cv2.COLOR_BGR2GRAY)<br>
+                 <br>
 # remove noise
-img = cv2.GaussianBlur(gray, (3,3),0)
+img = cv2.GaussianBlur(gray, (3,3),0)<br>
                  
 #convolute with proper kernels
-laplacian = cv2.Laplacian (img,cv2.CV_64F)
-sobelx = cv2.Sobel (img,cv2.CV_64F,1,0,ksize=5) #x
-sobely = cv2.Sobel(img,cv2.CV_64F,0,1,ksize=5) #y
+laplacian = cv2.Laplacian (img,cv2.CV_64F)<br>
+sobelx = cv2.Sobel (img,cv2.CV_64F,1,0,ksize=5) #x<br>
+sobely = cv2.Sobel(img,cv2.CV_64F,0,1,ksize=5) #y<br>
 
-plt.subplot(2,2,1), plt.imshow(img,cmap = 'gray')
-plt.title('Original'), plt.xticks([]), plt.yticks([])
-plt.subplot(2,2,2), plt.imshow(laplacian,cmap = 'gray')
-plt.title('Laplacian'), plt.xticks([]), plt.yticks([])
-plt.subplot(2,2,3), plt.imshow(sobelx, cmap = 'gray')
-plt.title('Sobel x'), plt.xticks([]), plt.yticks([])
-plt.subplot(2,2,4), plt.imshow(sobely,cmap = 'gray')
-plt.title('Sobel Y'), plt.xticks([]), plt.yticks([])
+plt.subplot(2,2,1), plt.imshow(img,cmap = 'gray')<br>
+plt.title('Original'), plt.xticks([]), plt.yticks([])<br>
+plt.subplot(2,2,2), plt.imshow(laplacian,cmap = 'gray')<br>
+plt.title('Laplacian'), plt.xticks([]), plt.yticks([])<br>
+plt.subplot(2,2,3), plt.imshow(sobelx, cmap = 'gray')<br>
+plt.title('Sobel x'), plt.xticks([]), plt.yticks([])<br>
+plt.subplot(2,2,4), plt.imshow(sobely,cmap = 'gray')<br>
+plt.title('Sobel Y'), plt.xticks([]), plt.yticks([])<br>
 
-plt.show()
-![image](https://user-images.githubusercontent.com/97970956/187902347-888a5fac-53b6-477d-87e3-6290f3a4a350.png)
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97970956/187902347-888a5fac-53b6-477d-87e3-6290f3a4a350.png)<br>
 
-c) Edge detection using Prewitt Operator
-#Edge detection using prewitt operator
-import cv2
-import numpy as np
-from matplotlib import pyplot as plt
-img = cv2.imread('animate.jpeg')
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-img_gaussian = cv2.GaussianBlur (gray, (3,3),0)
+c) Edge detection using Prewitt Operator<br>
+#Edge detection using prewitt operator<br>
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+img = cv2.imread('animate.jpeg')<br>
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)<br>
+img_gaussian = cv2.GaussianBlur (gray, (3,3),0)<br>
 
-#prewitt
-kernelx = np.array([[1,1,1], [0,0,0],[-1,-1,-1]])
-kernely = np.array([[-1,0,1], [-1,0,1],[-1,0,1]])
-img_prewittx = cv2.filter2D(img_gaussian, -1, kernelx) 
-img_prewitty = cv2.filter2D(img_gaussian, -1, kernely)
+#prewitt<br>
+kernelx = np.array([[1,1,1], [0,0,0],[-1,-1,-1]])<br>
+kernely = np.array([[-1,0,1], [-1,0,1],[-1,0,1]])<br>
+img_prewittx = cv2.filter2D(img_gaussian, -1, kernelx) <br>
+img_prewitty = cv2.filter2D(img_gaussian, -1, kernely)<br>
 
-cv2.imshow("Original Image", img)
-cv2.imshow("Prewitt x", img_prewittx)
-cv2.imshow("Prewitt y", img_prewitty)
-cv2.imshow("Prewitt", img_prewittx + img_prewitty)
-cv2.waitKey()
-cv2.destroyAllWindows()
+cv2.imshow("Original Image", img)<br>
+cv2.imshow("Prewitt x", img_prewittx)<br>
+cv2.imshow("Prewitt y", img_prewitty)<br>
+cv2.imshow("Prewitt", img_prewittx + img_prewitty)<br>
+cv2.waitKey()<br>
+cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/97970956/187902882-400da0eb-9e47-49a0-8c3c-a5d6923627da.png)
 ![image](https://user-images.githubusercontent.com/97970956/187902933-fcf6d495-e19d-4661-8165-bbe14dfd6d4c.png)
 ![image](https://user-images.githubusercontent.com/97970956/187902998-93a3cad2-fa43-49c3-b109-4a641ac88ecd.png)
 ![image](https://user-images.githubusercontent.com/97970956/187903065-0e04ba89-3b95-4d76-b902-42e71bce4ca0.png)
 
-d) Roberts Edge Detection- Roberts cross operator
-#import cv2
-import cv2
-import numpy as np
-from scipy import ndimage
-from matplotlib import pyplot as plt
-roberts_cross_v = np.array([[1, 0],
-                            [0,-1 ]] )
-roberts_cross_h= np.array([[0, 1],
-                           [-1, 0 ]] )
-img = cv2.imread("animate.jpeg",0).astype('float64')
-img/=255.0
-vertical =ndimage.convolve( img, roberts_cross_v )
-horizontal=ndimage.convolve( img, roberts_cross_h)
-
-edged_img = np.sqrt( np.square (horizontal) + np.square(vertical))
-edged_img*=255
-cv2.imwrite("output.jpg",edged_img)
-cv2.imshow("OutputImage", edged_img)
-cv2.waitKey()
-cv2.destroyAllWindows()
-![image](https://user-images.githubusercontent.com/97970956/187903184-da36cb18-5d0b-4905-9ecb-5384dfd566a8.png)
+d) Roberts Edge Detection- Roberts cross operator<br>
+#import cv2<br>
+import cv2<br>
+import numpy as np<br>
+from scipy import ndimage<br>
+from matplotlib import pyplot as plt<br>
+roberts_cross_v = np.array([[1, 0],<br>
+                            [0,-1 ]] )<br>
+roberts_cross_h= np.array([[0, 1],<br>
+                           [-1, 0 ]] )<br>
+img = cv2.imread("animate.jpeg",0).astype('float64')<br>
+img/=255.0<br>
+vertical =ndimage.convolve( img, roberts_cross_v )<br>
+horizontal=ndimage.convolve( img, roberts_cross_h)<br>
+<br>
+edged_img = np.sqrt( np.square (horizontal) + np.square(vertical))<br>
+edged_img*=255<br>
+cv2.imwrite("output.jpg",edged_img)<br>
+cv2.imshow("OutputImage", edged_img)<br>
+cv2.waitKey()<br>
+cv2.destroyAllWindows()<br>
+![image](https://user-images.githubusercontent.com/97970956/187903184-da36cb18-5d0b-4905-9ecb-5384dfd566a8.png)<br>
