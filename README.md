@@ -878,5 +878,39 @@ cv2.imshow('Sobel X Y using Sobel() function', sobelxy)
 cv2.waitKey(0)
 
 1.basic pillow function
+from PIL import Image,ImageChops,ImageFilter 
+from matplotlib import pyplot as plt
+
+#Create a PIL Image objects
+x=Image.open("x.png")
+o=Image.open("o.png")
+
+#Find out the attributes of the Image Objects
+print('size of the image:',x.size,'colour mode:',x.mode)
+print('size of the iamge:',o.size,'colour mode:',o.mode)
+
+#plot 2 images one besides the other 
+plt.subplot(121),plt.imshow(x)
+plt.axis('off')
+plt.subplot(122),plt.imshow(o)
+plt.axis('off')
+
+#multiply images
+merged=ImageChops.multiply(x,o)
+
+#adding 2 images
+add=ImageChops.add(x,o)
+
+#convert colour mode
+greyscale=merged.convert('L')
+greyscale
+![image](https://user-images.githubusercontent.com/97970956/187896129-0451d422-e545-453c-a116-17310245ef37.png)
+#More attributes
+image=merged
+
+print('image size:',image.size,
+     '\ncolour mode:',image.mode,
+     '\nimage width',image.width,'|also represented by:',image.size[0],
+     '\nimage height',image.height,'|also represented by:',image.size[1], )
 
 
